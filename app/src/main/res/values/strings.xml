@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Visit_my_Cities_Android</string>
+    
+    <string name="visit_my_cities_api_key" >AIzaSyBBbWcw7120hR2F_DJAfA62zevHa1Iuo0s</string>
 </resources>
