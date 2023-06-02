@@ -1,0 +1,66 @@
+
+
+Ville:
+	ville_id int
+	ville_nom varchar
+	ville_cp int
+	ville_departement enum
+	ville_region enum
+	ville_description text
+	
+	
+
+	- Strasbourg 
+		-
+	- Bordeaux
+		-
+	- Rennes
+		-
+	- Nice
+		-
+		
+Batiments:
+	batiment_id int AI
+	batiment_nom varchar
+	batiment_adresse varchar
+	batiment_ville_id -> ville_id
+	batiment_longitude decimal
+	batiment_latitude decimal
+	batiment_superficie integer
+	batiment_description text
+	batiment_lien_photo varchar -> url drive 
+	batiment_annee_construction int
+	batiment_architecte varchar
+	batiment_type_achitecture enum {industriel, baroque, roccoco, gothique, classique, antique, galo-romain, chretienne, art-nouveau}
+	batiment_categorie enum {chateau, maison, immeuble, ruines, industriel, espace-vert, monument}
+	batiment_specificite enum {jardins, fenetres, toiture, murs}
+	batiment_liste_id int
+	
+	
+Utilisateurs:
+	utilisateur_id int
+	utilisateur_pseudo varchar
+	utilisateur_email varchar
+	utilisateur_mdp varchar
+	utilisateur_photo varchar
+	utilisateur_role enum
+	
+	
+Liste Batiments: 
+	liste_id int AI
+	liste_nom varchar
+	liste_utilisateur_id
+	liste_batiment_id
+	
+	
+
+
+
+
+
+	
+	
+	
+	
+	
+	
