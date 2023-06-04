@@ -23,7 +23,7 @@ Batiments:
 	batiment_id int AI
 	batiment_nom varchar
 	batiment_adresse varchar
-	batiment_ville_id -> ville_id
+	batiment_ville_id -> ville_id #clé étrangère fait référence à ville_id (table ville)
 	batiment_longitude decimal
 	batiment_latitude decimal
 	batiment_superficie integer
@@ -49,8 +49,8 @@ Utilisateurs:
 Liste Batiments: 
 	liste_id int AI
 	liste_nom varchar
-	liste_utilisateur_id
-	liste_batiment_id
+	liste_utilisateur_id #clé étrangère fait référence à utilisateur_id (table utilisateur)
+	liste_batiment_id #clé étrangère fait référence à batiment_id (table batiments)
 	
 	
 
