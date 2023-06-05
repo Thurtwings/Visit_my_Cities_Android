@@ -9,12 +9,24 @@
 
 
     <Button
+        android:id="@+id/FeedButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="Explore"
+        app:layout_constraintBottom_toBottomOf="@+id/HomeScreenMapButton"
+        app:layout_constraintEnd_toStartOf="@+id/HomeScreenMapButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
         android:id="@+id/HomeScreenMapButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:text="Map"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/homeScreenConnectButton"
+        app:layout_constraintEnd_toStartOf="@+id/homeScreenConnectButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/FeedButton" />
 
     <Button
         android:id="@+id/homeScreenConnectButton"
@@ -22,27 +34,27 @@
         android:layout_height="100dp"
         android:text="Login"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/HomeScreenMapButton" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="0dp"
+        android:layout_width="411dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="128dp"
+        tools:srcCompat="@drawable/placeholder" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="22dp"
         android:text="Visit my Cities"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
