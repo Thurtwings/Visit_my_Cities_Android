@@ -64,11 +64,5 @@ public class MainActivity extends AppCompatActivity
         startActivity(nav);
     }
 
-        LatLng lutterbach = new LatLng(47.7577607843101, 7.281901728333069);
-        LatLng aspach = new LatLng(47.63932601876372, 7.233489344268355);
-        mainMap.addMarker(new MarkerOptions().position(lutterbach).title("Chez moi"));
-        mainMap.addMarker(new MarkerOptions().position(aspach).title("Chez Zef"));
-        mainMap.moveCamera(CameraUpdateFactory.newLatLng(aspach));
-
 
 }
