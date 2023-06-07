@@ -7,7 +7,7 @@
     tools:context=".ListsScreen">
 
     <ImageView
-        android:id="@+id/imageView15"
+        android:id="@+id/background3"
         android:layout_width="517dp"
         android:layout_height="965dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -17,7 +17,7 @@
         app:srcCompat="@drawable/background" />
 
     <ImageView
-        android:id="@+id/imageView16"
+        android:id="@+id/banniere3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +26,7 @@
         app:srcCompat="@drawable/banniere" />
 
     <ImageView
-        android:id="@+id/imageView17"
+        android:id="@+id/imageNavbar3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -35,72 +35,141 @@
         app:srcCompat="@drawable/tab_bar" />
 
     <ImageButton
-        android:id="@+id/imageButton29"
+        android:id="@+id/homeButton3"
         android:layout_width="85dp"
         android:layout_height="80dp"
         android:layout_marginBottom="-5dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton31"
+        app:layout_constraintEnd_toStartOf="@+id/mapButton3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/btn_home1" />
 
     <ImageButton
-        android:id="@+id/imageButton31"
+        android:id="@+id/mapButton3"
         android:layout_width="85dp"
         android:layout_height="80dp"
         android:layout_marginBottom="-5dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton33"
+        app:layout_constraintEnd_toStartOf="@+id/buildingButton3"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton29"
+        app:layout_constraintStart_toEndOf="@+id/homeButton3"
         app:srcCompat="@drawable/btn_map1" />
 
     <ImageButton
-        android:id="@+id/imageButton33"
+        android:id="@+id/buildingButton3"
         android:layout_width="85dp"
         android:layout_height="80dp"
         android:layout_marginBottom="-5dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton34"
+        app:layout_constraintEnd_toStartOf="@+id/addButton3"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton31"
+        app:layout_constraintStart_toEndOf="@+id/mapButton3"
         app:srcCompat="@drawable/btn_buildings1" />
 
     <ImageButton
-        android:id="@+id/imageButton34"
+        android:id="@+id/addButton3"
         android:layout_width="85dp"
         android:layout_height="80dp"
         android:layout_marginBottom="-5dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton35"
+        app:layout_constraintEnd_toStartOf="@+id/accountButton3"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton33"
+        app:layout_constraintStart_toEndOf="@+id/buildingButton3"
         app:srcCompat="@drawable/btn_add2" />
 
     <ImageButton
-        android:id="@+id/imageButton35"
+        android:id="@+id/accountButton3"
         android:layout_width="85dp"
         android:layout_height="80dp"
         android:layout_marginBottom="-5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton34"
+        app:layout_constraintStart_toEndOf="@+id/addButton3"
         app:srcCompat="@drawable/btn_login1" />
 
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="406dp"
-        android:layout_height="400dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView17"
+        android:layout_height="500dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageNavbar3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/banniere3">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.491"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="281dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/imageIllustration3"
+                                android:layout_width="174dp"
+                                android:layout_height="108dp"
+                                app:srcCompat="@drawable/placeholder" />
+
+                            <TableRow
+                                android:layout_width="170dp"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/nom3"
+                                    android:layout_width="47dp"
+                                    android:layout_height="match_parent"
+                                    android:text="Nom" />
+
+                                <TableRow
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <TableRow
+                                            android:layout_width="23dp"
+                                            android:layout_height="match_parent" />
+
+                                        <Button
+                                            android:id="@+id/buttonNom3"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="92dp"
+                                            android:text="Valider" />
+                                    </TableRow>
+
+                                </TableRow>
+
+                            </TableRow>
+
+                        </TableRow>
+
+                    </TableLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
