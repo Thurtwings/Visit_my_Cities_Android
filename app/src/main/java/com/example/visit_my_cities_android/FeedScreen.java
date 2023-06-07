@@ -38,11 +38,11 @@ public class FeedScreen extends AppCompatActivity {
         imageNavbar2 = (ImageView) findViewById(R.id.imageNavbar2);
 
 
-        nom2 = (TextView) findViewById(R.id.nom2);
+        nom2 = (TextView) findViewById(R.id.nom3);
 
-        imageIllustration2 = (ImageView) findViewById(R.id.imageIllustration2);
+        imageIllustration2 = (ImageView) findViewById(R.id.imageIllustration3);
 
-        buttonNom2 = (Button) findViewById(R.id.buttonNom2);
+        buttonNom2 = (Button) findViewById(R.id.buttonNom3);
 
 
         homeButton2 = (ImageButton) findViewById(R.id.homeButton2);

@@ -7,7 +7,7 @@
     tools:context=".LoginScreen">
 
     <ImageView
-        android:id="@+id/imageView22"
+        android:id="@+id/background4"
         android:layout_width="516dp"
         android:layout_height="1047dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -17,7 +17,7 @@
         app:srcCompat="@drawable/background" />
 
     <ImageView
-        android:id="@+id/imageView23"
+        android:id="@+id/banniere4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +26,7 @@
         app:srcCompat="@drawable/banniere" />
 
     <ImageView
-        android:id="@+id/imageView24"
+        android:id="@+id/imageNavbar4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -35,62 +35,62 @@
         app:srcCompat="@drawable/tab_bar" />
 
     <ImageButton
-        android:id="@+id/imageButton41"
+        android:id="@+id/homeButton4"
         android:layout_width="85dp"
         android:layout_height="80dp"
         android:layout_marginBottom="-5dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton45"
+        app:layout_constraintEnd_toStartOf="@+id/mapButton4"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/btn_home1" />
 
     <ImageButton
-        android:id="@+id/imageButton45"
+        android:id="@+id/mapButton4"
         android:layout_width="85dp"
         android:layout_height="80dp"
         android:layout_marginBottom="-5dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton46"
+        app:layout_constraintEnd_toStartOf="@+id/buildingButton4"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton41"
+        app:layout_constraintStart_toEndOf="@+id/homeButton4"
         app:srcCompat="@drawable/btn_map1" />
 
     <ImageButton
-        android:id="@+id/imageButton46"
+        android:id="@+id/buildingButton4"
         android:layout_width="85dp"
         android:layout_height="80dp"
         android:layout_marginBottom="-5dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton47"
+        app:layout_constraintEnd_toStartOf="@+id/addButton4"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton45"
+        app:layout_constraintStart_toEndOf="@+id/mapButton4"
         app:srcCompat="@drawable/btn_buildings1" />
 
     <ImageButton
-        android:id="@+id/imageButton47"
+        android:id="@+id/addButton4"
         android:layout_width="85dp"
         android:layout_height="80dp"
         android:layout_marginBottom="-5dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton48"
+        app:layout_constraintEnd_toStartOf="@+id/accountButton4"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton46"
+        app:layout_constraintStart_toEndOf="@+id/buildingButton4"
         app:srcCompat="@drawable/btn_add1" />
 
     <ImageButton
-        android:id="@+id/imageButton48"
+        android:id="@+id/accountButton4"
         android:layout_width="85dp"
         android:layout_height="80dp"
         android:layout_marginBottom="-5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton47"
+        app:layout_constraintStart_toEndOf="@+id/addButton4"
         app:srcCompat="@drawable/btn_login2" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewPseudo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -98,10 +98,10 @@
         android:text="Pseudo"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView23" />
+        app:layout_constraintTop_toBottomOf="@+id/banniere4" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textViewPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -109,10 +109,10 @@
         android:text="Mot de Passe"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewPseudo" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/editTextPseudo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="140dp"
@@ -120,10 +120,10 @@
         android:ems="10"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView23" />
+        app:layout_constraintTop_toBottomOf="@+id/banniere4" />
 
     <EditText
-        android:id="@+id/editTextText3"
+        android:id="@+id/editTextPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
@@ -131,24 +131,24 @@
         android:ems="10"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPseudo" />
 
     <ImageButton
-        android:id="@+id/imageButton49"
+        android:id="@+id/SignupScreenButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView24"
+        app:layout_constraintBottom_toTopOf="@+id/imageNavbar4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/btn_inscription" />
 
     <ImageButton
-        android:id="@+id/imageButton50"
+        android:id="@+id/UserScreenButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton49"
+        app:layout_constraintBottom_toTopOf="@+id/SignupScreenButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/btn_valider" />

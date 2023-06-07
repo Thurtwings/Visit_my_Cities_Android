@@ -26,7 +26,7 @@
         app:srcCompat="@drawable/banniere" />
 
     <ImageView
-        android:id="@+id/imageView17"
+        android:id="@+id/imageNavbar3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -35,58 +35,58 @@
         app:srcCompat="@drawable/tab_bar" />
 
     <ImageButton
-        android:id="@+id/imageButton29"
+        android:id="@+id/homeButton3"
         android:layout_width="85dp"
         android:layout_height="80dp"
         android:layout_marginBottom="-5dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton31"
+        app:layout_constraintEnd_toStartOf="@+id/mapButton3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/btn_home1" />
 
     <ImageButton
-        android:id="@+id/imageButton31"
+        android:id="@+id/mapButton3"
         android:layout_width="85dp"
         android:layout_height="80dp"
         android:layout_marginBottom="-5dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton33"
+        app:layout_constraintEnd_toStartOf="@+id/buildingButton3"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton29"
+        app:layout_constraintStart_toEndOf="@+id/homeButton3"
         app:srcCompat="@drawable/btn_map1" />
 
     <ImageButton
-        android:id="@+id/imageButton33"
+        android:id="@+id/buildingButton3"
         android:layout_width="85dp"
         android:layout_height="80dp"
         android:layout_marginBottom="-5dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton34"
+        app:layout_constraintEnd_toStartOf="@+id/addButton3"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton31"
+        app:layout_constraintStart_toEndOf="@+id/mapButton3"
         app:srcCompat="@drawable/btn_buildings1" />
 
     <ImageButton
-        android:id="@+id/imageButton34"
+        android:id="@+id/addButton3"
         android:layout_width="85dp"
         android:layout_height="80dp"
         android:layout_marginBottom="-5dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton35"
+        app:layout_constraintEnd_toStartOf="@+id/accountButton3"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton33"
+        app:layout_constraintStart_toEndOf="@+id/buildingButton3"
         app:srcCompat="@drawable/btn_add2" />
 
     <ImageButton
-        android:id="@+id/imageButton35"
+        android:id="@+id/accountButton3"
         android:layout_width="85dp"
         android:layout_height="80dp"
         android:layout_marginBottom="-5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton34"
+        app:layout_constraintStart_toEndOf="@+id/addButton3"
         app:srcCompat="@drawable/btn_login1" />
 
     <ScrollView
@@ -94,7 +94,7 @@
         android:layout_width="406dp"
         android:layout_height="500dp"
         android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView17"
+        app:layout_constraintBottom_toTopOf="@+id/imageNavbar3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -127,7 +127,7 @@
                             android:layout_height="match_parent">
 
                             <ImageView
-                                android:id="@+id/imageIllustration2"
+                                android:id="@+id/imageIllustration3"
                                 android:layout_width="174dp"
                                 android:layout_height="108dp"
                                 app:srcCompat="@drawable/placeholder" />
@@ -137,7 +137,7 @@
                                 android:layout_height="match_parent">
 
                                 <TextView
-                                    android:id="@+id/nom2"
+                                    android:id="@+id/nom3"
                                     android:layout_width="47dp"
                                     android:layout_height="match_parent"
                                     android:text="Nom" />
@@ -155,10 +155,10 @@
                                             android:layout_height="match_parent" />
 
                                         <Button
-                                            android:id="@+id/buttonNom2"
+                                            android:id="@+id/buttonNom3"
                                             android:layout_width="wrap_content"
                                             android:layout_height="92dp"
-                                            android:text="Button" />
+                                            android:text="Valider" />
                                     </TableRow>
 
                                 </TableRow>
