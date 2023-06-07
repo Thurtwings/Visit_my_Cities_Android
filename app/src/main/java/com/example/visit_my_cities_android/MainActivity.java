@@ -7,43 +7,85 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity
 {
 
+    private ImageView background;
+    private ImageView banniere;
+    private ImageView imageNavbar;
 
-    private Button homeScreenMapButton;
-    private Button homeScreenLoginButton;
-    private Button homeScreenFeedButton;
+    private TextView nom1;
+    private ImageView imageIllustration1;
+    private ImageButton buttonNom1;
+
+    private ImageButton homeButton;
+    private ImageButton mapButton;
+    private ImageButton buildingButton;
+    private ImageButton addButton;
+    private ImageButton accountButton;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        homeScreenMapButton = (Button) findViewById(R.id.HomeScreenMapButton);
-        homeScreenLoginButton = (Button) findViewById(R.id.homeScreenConnectButton);
-        homeScreenFeedButton = (Button) findViewById(R.id.FeedButton);
+        background = (ImageView) findViewById(R.id.background);
+        banniere = (ImageView) findViewById(R.id.banniere);
+        imageNavbar = (ImageView) findViewById(R.id.imageNavbar);
 
-        homeScreenMapButton.setOnClickListener(new View.OnClickListener() {
+
+        nom1 = (TextView) findViewById(R.id.nom1);
+
+        imageIllustration1 = (ImageView) findViewById(R.id.imageIllustration1);
+
+        buttonNom1 = (ImageButton) findViewById(R.id.buttonNom1);
+
+
+        homeButton = (ImageButton) findViewById(R.id.homeButton);
+        mapButton = (ImageButton) findViewById(R.id.mapButton);
+        buildingButton = (ImageButton) findViewById(R.id.buildingButton);
+        addButton = (ImageButton) findViewById(R.id.addButton);
+        accountButton = (ImageButton) findViewById(R.id.accountButton);
+
+
+        mapButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 GoToMapScreen();
             }
         });
-        homeScreenLoginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                GoToLoginScreen();
-            }
-        });
 
-        homeScreenFeedButton.setOnClickListener(new View.OnClickListener() {
+        buildingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 GoToFeedScreen();
             }
         });
+
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                GoToListsScreen();
+            }
+        });
+
+        accountButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                GoToLoginScreen();
+            }
+        });
+    }
+
+
+    private void GoToMapScreen()
+    {
+        Intent nav = new Intent(this, MapScreen.class);
+        startActivity(nav);
     }
 
     private void GoToFeedScreen()
@@ -52,17 +94,15 @@ public class MainActivity extends AppCompatActivity
         startActivity(nav);
     }
 
+    private void GoToListsScreen()
+    {
+        Intent nav = new Intent(this, ListsScreen.class);
+        startActivity(nav);
+    }
+
     private void GoToLoginScreen()
     {
         Intent nav = new Intent(this, LoginScreen.class);
         startActivity(nav);
     }
-
-    private void GoToMapScreen()
-    {
-        Intent nav = new Intent(this, MapScreen.class);
-        startActivity(nav);
-    }
-
-
 }
