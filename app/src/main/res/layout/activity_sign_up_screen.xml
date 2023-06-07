@@ -36,7 +36,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editTextText2"
         app:layout_constraintTop_toBottomOf="@+id/imageView6"
-        app:srcCompat="@drawable/btn_buildingImage" />
+        app:srcCompat="@drawable/btn_building_image" />
 
     <TextView
         android:id="@+id/textView"
