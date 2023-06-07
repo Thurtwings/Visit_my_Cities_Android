@@ -30,11 +30,11 @@
     <ScrollView
         android:id="@+id/scrollView3"
         android:layout_width="400dp"
-        android:layout_height="600dp"
+        android:layout_height="550dp"
+        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/buildingButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/banniere">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
