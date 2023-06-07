@@ -37,7 +37,7 @@
     <ImageButton
         android:id="@+id/homeButton4"
         android:layout_width="85dp"
-        android:layout_height="80dp"
+        android:layout_height="75dp"
         android:layout_marginBottom="-5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/mapButton4"
@@ -48,7 +48,7 @@
     <ImageButton
         android:id="@+id/mapButton4"
         android:layout_width="85dp"
-        android:layout_height="80dp"
+        android:layout_height="75dp"
         android:layout_marginBottom="-5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buildingButton4"
@@ -59,7 +59,7 @@
     <ImageButton
         android:id="@+id/buildingButton4"
         android:layout_width="85dp"
-        android:layout_height="80dp"
+        android:layout_height="75dp"
         android:layout_marginBottom="-5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/addButton4"
@@ -70,7 +70,7 @@
     <ImageButton
         android:id="@+id/addButton4"
         android:layout_width="85dp"
-        android:layout_height="80dp"
+        android:layout_height="75dp"
         android:layout_marginBottom="-5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/accountButton4"
@@ -81,7 +81,7 @@
     <ImageButton
         android:id="@+id/accountButton4"
         android:layout_width="85dp"
-        android:layout_height="80dp"
+        android:layout_height="75dp"
         android:layout_marginBottom="-5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -135,8 +135,8 @@
 
     <ImageButton
         android:id="@+id/SignupScreenButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="290dp"
+        android:layout_height="66dp"
         android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toTopOf="@+id/imageNavbar4"
         app:layout_constraintEnd_toEndOf="parent"
@@ -145,8 +145,8 @@
 
     <ImageButton
         android:id="@+id/UserScreenButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="290dp"
+        android:layout_height="66dp"
         android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toTopOf="@+id/SignupScreenButton"
         app:layout_constraintEnd_toEndOf="parent"
