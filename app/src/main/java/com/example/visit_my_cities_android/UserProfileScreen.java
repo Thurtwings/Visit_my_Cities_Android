@@ -27,7 +27,6 @@ public class UserProfileScreen extends AppCompatActivity
 
     private ImageButton deconnectButton;
 
-    private ImageButton favoriAddListButton;
     private ImageButton favoriListButton;
 
     private ImageButton homeButton6;
@@ -57,7 +56,6 @@ public class UserProfileScreen extends AppCompatActivity
 
         deconnectButton = (ImageButton) findViewById(R.id.deconnectButton);
         favoriListButton = (ImageButton) findViewById(R.id.favoriListButton);
-        favoriAddListButton = (ImageButton) findViewById(R.id.favoriAddListButton);
 
 
         homeButton6 = (ImageButton) findViewById(R.id.homeButton6);
