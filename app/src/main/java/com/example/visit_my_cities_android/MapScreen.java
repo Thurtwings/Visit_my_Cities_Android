@@ -36,7 +36,6 @@ public class MapScreen extends AppCompatActivity implements OnMapReadyCallback {
     Location currentLocation;
     FusedLocationProviderClient fusedLocationProviderClient;
 
-    private ImageButton homeButton1;
     private ImageButton mapButton1;
     private ImageButton buildingButton1;
     private ImageButton addButton1;
@@ -51,7 +50,6 @@ public class MapScreen extends AppCompatActivity implements OnMapReadyCallback {
         imageNavbar1 = (ImageView) findViewById(R.id.imageNavbar1);
 
 
-        homeButton1 = (ImageButton) findViewById(R.id.homeButton1);
         mapButton1 = (ImageButton) findViewById(R.id.mapButton1);
         buildingButton1 = (ImageButton) findViewById(R.id.buildingButton1);
         addButton1 = (ImageButton) findViewById(R.id.addButton1);
@@ -60,13 +58,6 @@ public class MapScreen extends AppCompatActivity implements OnMapReadyCallback {
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         GetLastLocation();
 
-
-        homeButton1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                GoToHomeScreen();
-            }
-        });
 
         buildingButton1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,13 +130,6 @@ public class MapScreen extends AppCompatActivity implements OnMapReadyCallback {
         }
     }
 
-
-
-    private void GoToHomeScreen()
-    {
-        Intent nav = new Intent(this, MainActivity.class);
-        startActivity(nav);
-    }
 
     private void GoToFeedScreen()
     {

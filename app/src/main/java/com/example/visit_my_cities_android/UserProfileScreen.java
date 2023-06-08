@@ -29,7 +29,6 @@ public class UserProfileScreen extends AppCompatActivity
 
     private ImageButton favoriListButton;
 
-    private ImageButton homeButton6;
     private ImageButton mapButton6;
     private ImageButton buildingButton6;
     private ImageButton addButton6;
@@ -58,19 +57,12 @@ public class UserProfileScreen extends AppCompatActivity
         favoriListButton = (ImageButton) findViewById(R.id.favoriListButton);
 
 
-        homeButton6 = (ImageButton) findViewById(R.id.homeButton6);
         mapButton6 = (ImageButton) findViewById(R.id.mapButton6);
         buildingButton6 = (ImageButton) findViewById(R.id.buildingButton6);
         addButton6 = (ImageButton) findViewById(R.id.addButton6);
         accountButton6 = (ImageButton) findViewById(R.id.accountButton6);
 
 
-        homeButton6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                GoToHomeScreen();
-            }
-        });
 
         mapButton6.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,24 +87,6 @@ public class UserProfileScreen extends AppCompatActivity
 
     }
 
-    private void GoToLists()
-    {
-        Intent nav = new Intent(this, ListsScreen.class);
-
-        startActivity(nav);
-    }
-
-    private void GoToFeed()
-    {
-        Intent nav = new Intent(this, FeedScreen.class);
-        startActivity(nav);
-    }
-
-    private void GoToHomeScreen()
-    {
-        Intent nav = new Intent(this, MainActivity.class);
-        startActivity(nav);
-    }
 
     private void GoToMapScreen()
     {

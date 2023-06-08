@@ -29,7 +29,6 @@ public class SignUpScreen extends AppCompatActivity {
     private ImageButton userScreenButton2;
     private ImageButton LoginButton;
 
-    private ImageButton homeButton5;
     private ImageButton mapButton5;
     private ImageButton buildingButton5;
     private ImageButton addButton5;
@@ -60,19 +59,12 @@ public class SignUpScreen extends AppCompatActivity {
 
 
 
-        homeButton5 = (ImageButton) findViewById(R.id.homeButton5);
         mapButton5 = (ImageButton) findViewById(R.id.mapButton5);
         buildingButton5 = (ImageButton) findViewById(R.id.buildingButton5);
         addButton5 = (ImageButton) findViewById(R.id.addButton5);
         accountButton5 = (ImageButton) findViewById(R.id.accountButton5);
 
 
-        homeButton5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                GoToHomeScreen();
-            }
-        });
 
         mapButton5.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,11 +115,6 @@ public class SignUpScreen extends AppCompatActivity {
         startActivity(nav);
     }
 
-    private void GoToHomeScreen()
-    {
-        Intent nav = new Intent(this, MainActivity.class);
-        startActivity(nav);
-    }
 
     private void GoToMapScreen()
     {

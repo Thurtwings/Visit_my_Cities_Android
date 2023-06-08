@@ -21,6 +21,7 @@
         android:id="@+id/banniere1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="-10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -30,6 +31,7 @@
         android:id="@+id/imageNavbar1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="-5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -37,32 +39,20 @@
         app:srcCompat="@drawable/tab_bar" />
 
     <ImageButton
-        android:id="@+id/homeButton1"
-        android:layout_width="85dp"
-        android:layout_height="80dp"
-        android:layout_marginBottom="-5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/mapButton1"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/btn_home1" />
-
-    <ImageButton
         android:id="@+id/mapButton1"
         android:layout_width="85dp"
         android:layout_height="80dp"
-        android:layout_marginBottom="-5dp"
+        android:backgroundTint="@color/common_google_signin_btn_tint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buildingButton1"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/homeButton1"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/btn_map2" />
 
     <ImageButton
         android:id="@+id/buildingButton1"
         android:layout_width="85dp"
         android:layout_height="80dp"
-        android:layout_marginBottom="-5dp"
+        android:backgroundTint="@color/common_google_signin_btn_tint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/addButton1"
         app:layout_constraintHorizontal_bias="0.5"
@@ -73,7 +63,7 @@
         android:id="@+id/addButton1"
         android:layout_width="85dp"
         android:layout_height="80dp"
-        android:layout_marginBottom="-5dp"
+        android:backgroundTint="@color/common_google_signin_btn_tint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/accountButton1"
         app:layout_constraintHorizontal_bias="0.5"
@@ -84,7 +74,7 @@
         android:id="@+id/accountButton1"
         android:layout_width="85dp"
         android:layout_height="80dp"
-        android:layout_marginBottom="-5dp"
+        android:backgroundTint="@color/common_google_signin_btn_tint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
