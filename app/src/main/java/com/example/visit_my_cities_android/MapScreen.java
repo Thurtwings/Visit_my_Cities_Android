@@ -129,6 +129,14 @@ public class MapScreen extends AppCompatActivity implements OnMapReadyCallback {
     }
 
 
+
+
+    private void GoToHomeScreen()
+    {
+        Intent nav = new Intent(this, MainActivity.class);
+        startActivity(nav);
+    }
+
     private void GoToFeedScreen()
     {
         Intent nav = new Intent(this, FeedScreen.class);
