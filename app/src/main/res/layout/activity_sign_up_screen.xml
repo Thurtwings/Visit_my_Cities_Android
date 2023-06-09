@@ -90,7 +90,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
         android:ems="10"
-        android:inputType="textPassword"
+        android:inputType="textEmailAddress"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewMail2" />
 
@@ -114,7 +114,10 @@
         app:layout_constraintBottom_toTopOf="@+id/addButton5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/btn_connexion" />
+
+        app:srcCompat="@drawable/btn_connexion"
+        tools:layout_editor_absoluteY="738dp" />
+
 
     <ImageButton
         android:id="@+id/userScreenButton2"
