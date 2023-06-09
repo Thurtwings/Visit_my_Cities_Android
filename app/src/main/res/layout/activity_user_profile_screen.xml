@@ -6,64 +6,157 @@
     android:layout_height="match_parent"
     tools:context=".UserProfileScreen">
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="75dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="259dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="14dp"
-        android:text="Logout"
-        app:cornerRadius="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/UserPicture"
+    <ImageView
+        android:id="@+id/background6"
+        android:layout_width="517dp"
+        android:layout_height="995dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/background" />
 
     <ImageView
-        android:id="@+id/UserPicture"
-        android:layout_width="225dp"
-        android:layout_height="228dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="448dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/banniere6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-10dp"
+        android:backgroundTint="@color/common_google_signin_btn_tint"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/banniere" />
+
+    <ImageButton
+        android:id="@+id/AvatarButton"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/common_google_signin_btn_tint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/banniere6"
+        app:srcCompat="@drawable/btn_building_avatar" />
+
+    <ImageButton
+        android:id="@+id/deconnectButton"
+        android:layout_width="310dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/common_google_signin_btn_tint"
+        app:layout_constraintBottom_toTopOf="@+id/addButton6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/btn_deconnect" />
+
+    <TextView
+        android:id="@+id/textViewPseudo3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="50dp"
+        android:text="Pseudo"
+        android:textSize="45dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/banniere6" />
+
+    <TextView
+        android:id="@+id/textViewMail3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="40dp"
+        android:text="Adresse Mail"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPseudo3" />
+
+    <TextView
+        android:id="@+id/textViewEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="5dp"
+        android:text="sum.dolor@mail.com"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewMail3" />
+
+    <TextView
+        android:id="@+id/textViewPassword3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:text="Mot de Passe"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEmail" />
+
+    <TextView
+        android:id="@+id/textViewPassWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="5dp"
+        android:text="***********"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPassword3" />
+
+    <ImageButton
+        android:id="@+id/favoriListButton"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="50dp"
+        android:background="@null"
+        app:layout_constraintBottom_toTopOf="@+id/deconnectButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/btn_favoris" />
+
+    <ImageButton
+        android:id="@+id/mapButton6"
+        android:layout_width="85dp"
+        android:layout_height="80dp"
+        android:backgroundTint="@color/common_google_signin_btn_tint"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buildingButton6"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4"
-        app:srcCompat="@drawable/placeholder" />
+        app:srcCompat="@drawable/btn_map1" />
 
-    <Button
-        android:id="@+id/UPFeedButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="Feed"
+    <ImageButton
+        android:id="@+id/buildingButton6"
+        android:layout_width="85dp"
+        android:layout_height="80dp"
+        android:backgroundTint="@color/common_google_signin_btn_tint"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/UPListButton"
+        app:layout_constraintEnd_toStartOf="@+id/addButton6"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/mapButton6"
+        app:srcCompat="@drawable/btn_buildings1" />
 
-    <Button
-        android:id="@+id/UPListButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Listes"
-        app:layout_constraintBottom_toBottomOf="@+id/UPFeedButton"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
+    <ImageButton
+        android:id="@+id/addButton6"
+        android:layout_width="85dp"
+        android:layout_height="80dp"
+        android:backgroundTint="@color/common_google_signin_btn_tint"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/accountButton6"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/UPFeedButton" />
+        app:layout_constraintStart_toEndOf="@+id/buildingButton6"
+        app:srcCompat="@drawable/btn_add1" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="@+id/UPListButton"
+    <ImageButton
+        android:id="@+id/accountButton6"
+        android:layout_width="85dp"
+        android:layout_height="80dp"
+        android:backgroundTint="@color/common_google_signin_btn_tint"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/UPListButton" />
+        app:layout_constraintStart_toEndOf="@+id/addButton6"
+        app:srcCompat="@drawable/btn_login2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
