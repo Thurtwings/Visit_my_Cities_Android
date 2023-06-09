@@ -16,7 +16,6 @@ public class LoginScreen extends AppCompatActivity
 
     private ImageView background4;
     private ImageView banniere4;
-    private ImageView imageNavbar4;
 
     private TextView textViewPseudo;
     private TextView textViewPassword;
@@ -27,7 +26,6 @@ public class LoginScreen extends AppCompatActivity
     private ImageButton SignupScreenButton;
     private ImageButton UserScreenButton;
 
-    private ImageButton homeButton4;
     private ImageButton mapButton4;
     private ImageButton buildingButton4;
     private ImageButton addButton4;
@@ -41,7 +39,6 @@ public class LoginScreen extends AppCompatActivity
 
         background4 = (ImageView) findViewById(R.id.background4);
         banniere4 = (ImageView) findViewById(R.id.banniere4);
-        imageNavbar4 = (ImageView) findViewById(R.id.imageNavbar4);
 
 
         textViewPseudo = (TextView) findViewById(R.id.textViewPseudo);
@@ -52,18 +49,11 @@ public class LoginScreen extends AppCompatActivity
         UserScreenButton = (ImageButton) findViewById(R.id.UserScreenButton);
 
 
-        homeButton4 = (ImageButton) findViewById(R.id.homeButton4);
         mapButton4 = (ImageButton) findViewById(R.id.mapButton4);
         buildingButton4 = (ImageButton) findViewById(R.id.buildingButton4);
         addButton4 = (ImageButton) findViewById(R.id.addButton4);
         accountButton4 = (ImageButton) findViewById(R.id.accountButton4);
 
-        homeButton4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                GoToHomeScreen();
-            }
-        });
 
         mapButton4.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,14 +65,14 @@ public class LoginScreen extends AppCompatActivity
         buildingButton4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                GoToListsScreen();
+                GoToFeedScreen();
             }
         });
 
        addButton4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                GoToFeedScreen();
+                GoToListsScreen();
             }
         });
 
@@ -113,12 +103,6 @@ public class LoginScreen extends AppCompatActivity
         startActivity(nav);
     }
 
-
-    private void GoToHomeScreen()
-    {
-        Intent nav = new Intent(this, MainActivity.class);
-        startActivity(nav);
-    }
 
     private void GoToMapScreen()
     {

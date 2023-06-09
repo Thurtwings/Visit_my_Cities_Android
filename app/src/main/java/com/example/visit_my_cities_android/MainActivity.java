@@ -16,15 +16,28 @@ public class MainActivity extends AppCompatActivity
 {
 
     private ImageView background;
-    private ImageView logo;
+    private ImageView logoButton;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         background = (ImageView) findViewById(R.id.background);
-        logo = (ImageView) findViewById(R.id.logo);
+        logoButton = (ImageView) findViewById(R.id.logoButton);
 
+        logoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                GoToLoginScreen();
+            }
+        });
+
+    }
+
+    private void GoToLoginScreen()
+    {
+        Intent nav = new Intent(this, LoginScreen.class);
+        startActivity(nav);
     }
 
 }

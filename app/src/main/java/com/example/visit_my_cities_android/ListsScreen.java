@@ -14,13 +14,11 @@ public class ListsScreen extends AppCompatActivity {
 
     private ImageView background3;
     private ImageView banniere3;
-    private ImageView imageNavbar3;
 
     private TextView nom3;
     private ImageView imageIllustration3;
     private Button buttonNom3;
 
-    private ImageButton homeButton3;
     private ImageButton mapButton3;
     private ImageButton buildingButton3;
     private ImageButton addButton3;
@@ -34,8 +32,6 @@ public class ListsScreen extends AppCompatActivity {
 
         background3 = (ImageView) findViewById(R.id.background3);
         banniere3 = (ImageView) findViewById(R.id.banniere3);
-        imageNavbar3 = (ImageView) findViewById(R.id.imageNavbar3);
-
 
         nom3 = (TextView) findViewById(R.id.nom3);
 
@@ -44,19 +40,11 @@ public class ListsScreen extends AppCompatActivity {
         buttonNom3 = (Button) findViewById(R.id.buttonNom3);
 
 
-        homeButton3 = (ImageButton) findViewById(R.id.homeButton3);
         mapButton3 = (ImageButton) findViewById(R.id.mapButton3);
         buildingButton3 = (ImageButton) findViewById(R.id.buildingButton3);
         addButton3 = (ImageButton) findViewById(R.id.addButton3);
         accountButton3 = (ImageButton) findViewById(R.id.accountButton3);
 
-
-        homeButton3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                GoToHomeScreen();
-            }
-        });
 
         mapButton3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,11 +68,6 @@ public class ListsScreen extends AppCompatActivity {
         });
     }
 
-    private void GoToHomeScreen()
-    {
-        Intent nav = new Intent(this, MainActivity.class);
-        startActivity(nav);
-    }
 
     private void GoToMapScreen()
     {
