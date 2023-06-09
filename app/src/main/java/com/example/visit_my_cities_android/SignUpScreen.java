@@ -9,6 +9,18 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class SignUpScreen extends AppCompatActivity {
 
@@ -32,6 +44,8 @@ public class SignUpScreen extends AppCompatActivity {
     private ImageButton buildingButton5;
     private ImageButton addButton5;
     private ImageButton accountButton5;
+
+    private DBManager databaseManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -130,6 +144,56 @@ public class SignUpScreen extends AppCompatActivity {
     {
         Intent nav = new Intent(this, ListsScreen.class);
         startActivity(nav);
+    }
+
+    public void createUser() {
+        String url = "http://jdevalik.fr/api/VMC_PHP_SBG/vmc_insertuser.php";
+
+        String pseudo = editTextPseudo2.getText().toString();
+        String email = editTextMail2.getText().toString();
+        String password = editTextPassword2.getText().toString();
+
+        if(pseudo.isEmpty() || email.isEmpty() || password.isEmpty()) {
+            // Show an error if any of the fields are empty
+            Toast.makeText(getApplicationContext(), "Veuillez remplir tous les champs", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        Map<String, String> params = new HashMap<>();
+        params.put("utilisateur_pseudo", pseudo);
+        params.put("utilisateur_email", email);
+        params.put("utilisateur_mdp", password);
+        JSONObject parameters = new JSONObject(params);
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, parameters, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    boolean success = response.getBoolean("success");
+                    if (success) {
+                        // Sign up successful
+                        Toast.makeText(getApplicationContext(), "Inscription réussie", Toast.LENGTH_LONG).show();
+                        Intent nav = new Intent(SignUpScreen.this, UserProfileScreen.class);
+                        startActivity(nav);
+                    } else {
+                        // Sign up failed
+                        Toast.makeText(getApplicationContext(), "L'inscription a échoué", Toast.LENGTH_LONG).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(getApplicationContext(), "Erreur de réponse du serveur", Toast.LENGTH_LONG).show();
+                }
+            }
+        }, new Response.ErrorListener() {
+
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(), "Erreur de connexion", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        databaseManager.queue.add(jsonObjectRequest);
     }
 
 }
