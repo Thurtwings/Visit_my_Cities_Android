@@ -8,53 +8,25 @@
     tools:context=".MainActivity">
 
 
-    <Button
-        android:id="@+id/FeedButton"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:text="Explore"
-        app:layout_constraintBottom_toBottomOf="@+id/HomeScreenMapButton"
-        app:layout_constraintEnd_toStartOf="@+id/HomeScreenMapButton"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/HomeScreenMapButton"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:text="Map"
-        app:layout_constraintBottom_toBottomOf="@+id/homeScreenConnectButton"
-        app:layout_constraintEnd_toStartOf="@+id/homeScreenConnectButton"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/FeedButton" />
-
-    <Button
-        android:id="@+id/homeScreenConnectButton"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:text="Login"
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="507dp"
+        android:layout_height="1094dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/HomeScreenMapButton" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/background" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="411dp"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="128dp"
-        tools:srcCompat="@drawable/placeholder" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="22dp"
-        android:text="Visit my Cities"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+    <ImageButton
+        android:id="@+id/logoButton"
+        android:layout_width="347dp"
+        android:layout_height="350dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

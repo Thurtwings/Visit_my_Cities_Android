@@ -7,49 +7,31 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity
 {
 
-
-    private Button homeScreenMapButton;
-    private Button homeScreenLoginButton;
-    private Button homeScreenFeedButton;
+    private ImageView background;
+    private ImageView logoButton;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        homeScreenMapButton = (Button) findViewById(R.id.HomeScreenMapButton);
-        homeScreenLoginButton = (Button) findViewById(R.id.homeScreenConnectButton);
-        homeScreenFeedButton = (Button) findViewById(R.id.FeedButton);
+        background = (ImageView) findViewById(R.id.background);
+        logoButton = (ImageView) findViewById(R.id.logoButton);
 
-        homeScreenMapButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                GoToMapScreen();
-            }
-        });
-        homeScreenLoginButton.setOnClickListener(new View.OnClickListener() {
+        logoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 GoToLoginScreen();
             }
         });
 
-        homeScreenFeedButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                GoToFeedScreen();
-            }
-        });
-    }
-
-    private void GoToFeedScreen()
-    {
-        Intent nav = new Intent(this, FeedScreen.class);
-        startActivity(nav);
     }
 
     private void GoToLoginScreen()
@@ -57,12 +39,5 @@ public class MainActivity extends AppCompatActivity
         Intent nav = new Intent(this, LoginScreen.class);
         startActivity(nav);
     }
-
-    private void GoToMapScreen()
-    {
-        Intent nav = new Intent(this, MapScreen.class);
-        startActivity(nav);
-    }
-
 
 }
