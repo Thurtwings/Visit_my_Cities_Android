@@ -1,6 +1,7 @@
 package com.example.visit_my_cities_android.ConnexionServer.Utilisateur;
 
 import android.os.AsyncTask;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -31,7 +32,6 @@ public class ConnexionServerGetUsers extends AsyncTask<String, Void, String> {
             urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestMethod("GET");
             urlConnection.connect();
-
             // Lire la réponse du serveur
             InputStream inputStream = urlConnection.getInputStream();
             StringBuilder stringBuilder = new StringBuilder();
