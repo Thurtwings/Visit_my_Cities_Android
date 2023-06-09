@@ -14,7 +14,6 @@ public class SignUpScreen extends AppCompatActivity {
 
     private ImageView background5;
     private ImageView banniere5;
-    private ImageView imageNavbar5;
 
     private TextView textViewPseudo2;
     private TextView textViewMail2;
@@ -41,7 +40,6 @@ public class SignUpScreen extends AppCompatActivity {
 
         background5 = (ImageView) findViewById(R.id.background5);
         banniere5 = (ImageView) findViewById(R.id.banniere5);
-        imageNavbar5 = (ImageView) findViewById(R.id.imageNavbar5);
 
 
         textViewPseudo2 = (TextView) findViewById(R.id.textViewPseudo2);

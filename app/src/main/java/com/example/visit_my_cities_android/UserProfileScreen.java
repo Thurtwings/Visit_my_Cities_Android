@@ -17,7 +17,6 @@ public class UserProfileScreen extends AppCompatActivity
 
     private ImageView background6;
     private ImageView banniere6;
-    private ImageView imageNavbar6;
 
     private TextView textViewPseudo3;
     private TextView textViewMail3;
@@ -43,7 +42,6 @@ public class UserProfileScreen extends AppCompatActivity
 
         background6 = (ImageView) findViewById(R.id.background6);
         banniere6 = (ImageView) findViewById(R.id.banniere6);
-        imageNavbar6 = (ImageView) findViewById(R.id.imageNavbar6);
 
 
         textViewPseudo3 = (TextView) findViewById(R.id.textViewPseudo3);

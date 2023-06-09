@@ -44,7 +44,7 @@
         android:layout_height="45dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/common_google_signin_btn_tint"
-        app:layout_constraintBottom_toTopOf="@+id/imageNavbar6"
+        app:layout_constraintBottom_toTopOf="@+id/addButton6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/btn_deconnect" />
@@ -114,16 +114,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/btn_favoris" />
-
-    <ImageView
-        android:id="@+id/imageNavbar6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="-5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/tab_bar" />
 
     <ImageButton
         android:id="@+id/mapButton6"

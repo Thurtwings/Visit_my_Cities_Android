@@ -28,15 +28,15 @@ public class MainActivity extends AppCompatActivity
         logoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                GoToUserScreen();
+                GoToLoginScreen();
             }
         });
 
     }
 
-    private void GoToUserScreen()
+    private void GoToLoginScreen()
     {
-        Intent nav = new Intent(this, UserProfileScreen.class);
+        Intent nav = new Intent(this, LoginScreen.class);
         startActivity(nav);
     }
 

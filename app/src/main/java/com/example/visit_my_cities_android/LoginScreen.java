@@ -16,7 +16,6 @@ public class LoginScreen extends AppCompatActivity
 
     private ImageView background4;
     private ImageView banniere4;
-    private ImageView imageNavbar4;
 
     private TextView textViewPseudo;
     private TextView textViewPassword;
@@ -40,7 +39,6 @@ public class LoginScreen extends AppCompatActivity
 
         background4 = (ImageView) findViewById(R.id.background4);
         banniere4 = (ImageView) findViewById(R.id.banniere4);
-        imageNavbar4 = (ImageView) findViewById(R.id.imageNavbar4);
 
 
         textViewPseudo = (TextView) findViewById(R.id.textViewPseudo);

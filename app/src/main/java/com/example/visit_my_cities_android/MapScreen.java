@@ -29,7 +29,6 @@ import com.google.android.gms.tasks.Task;
 public class MapScreen extends AppCompatActivity implements OnMapReadyCallback {
 
     private ImageView banniere1;
-    private ImageView imageNavbar1;
 
     private final int FINE_PERMISSION_CODE = 1;
     private GoogleMap mainMap;
@@ -47,7 +46,6 @@ public class MapScreen extends AppCompatActivity implements OnMapReadyCallback {
         setContentView(R.layout.activity_map_display);
 
         banniere1 = (ImageView) findViewById(R.id.banniere1);
-        imageNavbar1 = (ImageView) findViewById(R.id.imageNavbar1);
 
 
         mapButton1 = (ImageButton) findViewById(R.id.mapButton1);

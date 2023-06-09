@@ -14,7 +14,6 @@ public class ListsScreen extends AppCompatActivity {
 
     private ImageView background3;
     private ImageView banniere3;
-    private ImageView imageNavbar3;
 
     private TextView nom3;
     private ImageView imageIllustration3;
@@ -33,8 +32,6 @@ public class ListsScreen extends AppCompatActivity {
 
         background3 = (ImageView) findViewById(R.id.background3);
         banniere3 = (ImageView) findViewById(R.id.banniere3);
-        imageNavbar3 = (ImageView) findViewById(R.id.imageNavbar3);
-
 
         nom3 = (TextView) findViewById(R.id.nom3);
 

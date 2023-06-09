@@ -15,7 +15,6 @@ public class FeedScreen extends AppCompatActivity {
 
     private ImageView background2;
     private ImageView banniere2;
-    private ImageView imageNavbar2;
 
     private TextView nom2;
     private ImageView imageIllustration2;
@@ -34,7 +33,6 @@ public class FeedScreen extends AppCompatActivity {
 
         background2 = (ImageView) findViewById(R.id.background2);
         banniere2 = (ImageView) findViewById(R.id.banniere2);
-        imageNavbar2 = (ImageView) findViewById(R.id.imageNavbar2);
 
 
         nom2 = (TextView) findViewById(R.id.nom3);

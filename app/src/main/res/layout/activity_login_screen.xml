@@ -26,16 +26,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/banniere" />
 
-    <ImageView
-        android:id="@+id/imageNavbar4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="-5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/tab_bar" />
-
     <ImageButton
         android:id="@+id/mapButton4"
         android:layout_width="85dp"
@@ -128,9 +118,9 @@
         android:id="@+id/SignupScreenButton"
         android:layout_width="290dp"
         android:layout_height="66dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="20dp"
         android:backgroundTint="@color/common_google_signin_btn_tint"
-        app:layout_constraintBottom_toTopOf="@+id/imageNavbar4"
+        app:layout_constraintBottom_toTopOf="@+id/addButton4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/btn_inscription" />
