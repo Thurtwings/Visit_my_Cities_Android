@@ -23,6 +23,8 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import com.android.volley.toolbox.StringRequest;
 import com.example.visit_my_cities_android.ConnexionServer.Utilisateur.ConnexionServerGetUsers;
 
 public class LoginScreen extends AppCompatActivity
@@ -155,44 +157,45 @@ public class LoginScreen extends AppCompatActivity
     }
 
 
-
     public void connectUser() {
         String url = "http://jdevalik.fr/api/VMC_PHP_SBG/get_pass.php";
 
-        Map<String, String> params = new HashMap<>();
-        params.put("pseudo", textViewPseudo_LoginScreen.getText().toString());
-        params.put("pass", textViewPassword_LoginScreen.getText().toString());
-        JSONObject parameters = new JSONObject(params);
-
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, parameters, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                try {
-                    boolean success = response.getBoolean("success");
-
-                    if (success) {
-                        // Login successful
-                        Toast.makeText(getApplicationContext(), "Connexion réussie", Toast.LENGTH_LONG).show();
-                        Intent nav = new Intent(LoginScreen.this, UserProfileScreen.class);
-                        startActivity(nav);
-                    } else {
-                        // Login failed
-                        Toast.makeText(getApplicationContext(), "Pseudo ou mot de passe incorrect", Toast.LENGTH_LONG).show();
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonResponse = new JSONObject(response);
+                            String success = jsonResponse.getString("success");
+                            if (success.equals("true")) {
+                                Toast.makeText(getApplicationContext(), "Connexion réussie", Toast.LENGTH_LONG).show();
+                                Intent nav = new Intent(LoginScreen.this, UserProfileScreen.class);
+                                startActivity(nav);
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Pseudo ou mot de passe incorrect", Toast.LENGTH_LONG).show();
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Toast.makeText(getApplicationContext(), "Erreur de réponse du serveur", Toast.LENGTH_LONG).show();
+                        }
                     }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Toast.makeText(getApplicationContext(), "Erreur de réponse du serveur", Toast.LENGTH_LONG).show();
-                }
-            }
-        }, new Response.ErrorListener() {
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getApplicationContext(), "Erreur de connexion", Toast.LENGTH_LONG).show();
+                    }
+                }) {
             @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "Erreur de connexion", Toast.LENGTH_LONG).show();
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<>();
+                params.put("pseudo", textViewPseudo_LoginScreen.getText().toString());
+                params.put("pass", textViewPassword_LoginScreen.getText().toString());
+                return params;
             }
-        });
+        };
 
-        databaseManager.queue.add(jsonObjectRequest);
+        databaseManager.queue.add(stringRequest);
     }
-
 
 }
