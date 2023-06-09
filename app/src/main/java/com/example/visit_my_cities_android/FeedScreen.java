@@ -15,13 +15,11 @@ public class FeedScreen extends AppCompatActivity {
 
     private ImageView background2;
     private ImageView banniere2;
-    private ImageView imageNavbar2;
 
     private TextView nom2;
     private ImageView imageIllustration2;
     private Button buttonNom2;
 
-    private ImageButton homeButton2;
     private ImageButton mapButton2;
     private ImageButton buildingButton2;
     private ImageButton addButton2;
@@ -35,7 +33,6 @@ public class FeedScreen extends AppCompatActivity {
 
         background2 = (ImageView) findViewById(R.id.background2);
         banniere2 = (ImageView) findViewById(R.id.banniere2);
-        imageNavbar2 = (ImageView) findViewById(R.id.imageNavbar2);
 
 
         nom2 = (TextView) findViewById(R.id.nom3);
@@ -45,19 +42,11 @@ public class FeedScreen extends AppCompatActivity {
         buttonNom2 = (Button) findViewById(R.id.buttonNom3);
 
 
-        homeButton2 = (ImageButton) findViewById(R.id.homeButton2);
         mapButton2 = (ImageButton) findViewById(R.id.mapButton2);
         buildingButton2 = (ImageButton) findViewById(R.id.buildingButton2);
         addButton2 = (ImageButton) findViewById(R.id.addButton2);
         accountButton2 = (ImageButton) findViewById(R.id.accountButton2);
 
-
-        homeButton2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                GoToHomeScreen();
-            }
-        });
 
         mapButton2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,12 +71,6 @@ public class FeedScreen extends AppCompatActivity {
     }
 
 
-    private void GoToHomeScreen()
-    {
-        Intent nav = new Intent(this, MainActivity.class);
-        startActivity(nav);
-    }
-
     private void GoToMapScreen()
     {
         Intent nav = new Intent(this, MapScreen.class);
@@ -105,5 +88,4 @@ public class FeedScreen extends AppCompatActivity {
         Intent nav = new Intent(this, LoginScreen.class);
         startActivity(nav);
     }
-
 }

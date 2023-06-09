@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/background4"
-        android:layout_width="516dp"
-        android:layout_height="1047dp"
+        android:layout_width="517dp"
+        android:layout_height="995dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
@@ -21,47 +21,28 @@
         android:id="@+id/banniere4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="-10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/banniere" />
 
-    <ImageView
-        android:id="@+id/imageNavbar4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/tab_bar" />
-
-    <ImageButton
-        android:id="@+id/homeButton4"
-        android:layout_width="85dp"
-        android:layout_height="75dp"
-        android:layout_marginBottom="-5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/mapButton4"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/btn_home1" />
-
     <ImageButton
         android:id="@+id/mapButton4"
         android:layout_width="85dp"
         android:layout_height="75dp"
-        android:layout_marginBottom="-5dp"
+        android:backgroundTint="@color/common_google_signin_btn_tint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buildingButton4"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/homeButton4"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/btn_map1" />
 
     <ImageButton
         android:id="@+id/buildingButton4"
         android:layout_width="85dp"
         android:layout_height="75dp"
-        android:layout_marginBottom="-5dp"
+        android:backgroundTint="@color/common_google_signin_btn_tint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/addButton4"
         app:layout_constraintHorizontal_bias="0.5"
@@ -72,7 +53,7 @@
         android:id="@+id/addButton4"
         android:layout_width="85dp"
         android:layout_height="75dp"
-        android:layout_marginBottom="-5dp"
+        android:backgroundTint="@color/common_google_signin_btn_tint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/accountButton4"
         app:layout_constraintHorizontal_bias="0.5"
@@ -83,7 +64,7 @@
         android:id="@+id/accountButton4"
         android:layout_width="85dp"
         android:layout_height="75dp"
-        android:layout_marginBottom="-5dp"
+        android:backgroundTint="@color/common_google_signin_btn_tint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -138,8 +119,9 @@
         android:id="@+id/SignupScreenButton"
         android:layout_width="290dp"
         android:layout_height="66dp"
-        android:layout_marginBottom="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageNavbar4"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/common_google_signin_btn_tint"
+        app:layout_constraintBottom_toTopOf="@+id/addButton4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/btn_inscription" />
@@ -149,6 +131,7 @@
         android:layout_width="290dp"
         android:layout_height="66dp"
         android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/common_google_signin_btn_tint"
         app:layout_constraintBottom_toTopOf="@+id/SignupScreenButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

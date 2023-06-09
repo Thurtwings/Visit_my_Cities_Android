@@ -10,59 +10,38 @@
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="416dp"
-        android:layout_height="712dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageNavbar1"
+        android:layout_width="412dp"
+        android:layout_height="731dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/banniere1" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/banniere1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="-10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/banniere" />
 
-    <ImageView
-        android:id="@+id/imageNavbar1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/tab_bar" />
-
-    <ImageButton
-        android:id="@+id/homeButton1"
-        android:layout_width="85dp"
-        android:layout_height="80dp"
-        android:layout_marginBottom="-5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/mapButton1"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/btn_home1" />
-
     <ImageButton
         android:id="@+id/mapButton1"
         android:layout_width="85dp"
         android:layout_height="80dp"
-        android:layout_marginBottom="-5dp"
+        android:backgroundTint="@color/common_google_signin_btn_tint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buildingButton1"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/homeButton1"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/btn_map2" />
 
     <ImageButton
         android:id="@+id/buildingButton1"
         android:layout_width="85dp"
         android:layout_height="80dp"
-        android:layout_marginBottom="-5dp"
+        android:backgroundTint="@color/common_google_signin_btn_tint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/addButton1"
         app:layout_constraintHorizontal_bias="0.5"
@@ -73,7 +52,7 @@
         android:id="@+id/addButton1"
         android:layout_width="85dp"
         android:layout_height="80dp"
-        android:layout_marginBottom="-5dp"
+        android:backgroundTint="@color/common_google_signin_btn_tint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/accountButton1"
         app:layout_constraintHorizontal_bias="0.5"
@@ -84,7 +63,7 @@
         android:id="@+id/accountButton1"
         android:layout_width="85dp"
         android:layout_height="80dp"
-        android:layout_marginBottom="-5dp"
+        android:backgroundTint="@color/common_google_signin_btn_tint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

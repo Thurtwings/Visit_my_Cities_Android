@@ -26,7 +26,6 @@ public class SignUpScreen extends AppCompatActivity {
 
     private ImageView background5;
     private ImageView banniere5;
-    private ImageView imageNavbar5;
 
     private TextView textViewPseudo2;
     private TextView textViewMail2;
@@ -41,7 +40,6 @@ public class SignUpScreen extends AppCompatActivity {
     private ImageButton userScreenButton2;
     private ImageButton LoginButton;
 
-    private ImageButton homeButton5;
     private ImageButton mapButton5;
     private ImageButton buildingButton5;
     private ImageButton addButton5;
@@ -56,7 +54,6 @@ public class SignUpScreen extends AppCompatActivity {
 
         background5 = (ImageView) findViewById(R.id.background5);
         banniere5 = (ImageView) findViewById(R.id.banniere5);
-        imageNavbar5 = (ImageView) findViewById(R.id.imageNavbar5);
 
 
         textViewPseudo2 = (TextView) findViewById(R.id.textViewPseudo2);
@@ -74,19 +71,12 @@ public class SignUpScreen extends AppCompatActivity {
 
 
 
-        homeButton5 = (ImageButton) findViewById(R.id.homeButton5);
         mapButton5 = (ImageButton) findViewById(R.id.mapButton5);
         buildingButton5 = (ImageButton) findViewById(R.id.buildingButton5);
         addButton5 = (ImageButton) findViewById(R.id.addButton5);
         accountButton5 = (ImageButton) findViewById(R.id.accountButton5);
 
 
-        homeButton5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                GoToHomeScreen();
-            }
-        });
 
         mapButton5.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -137,11 +127,6 @@ public class SignUpScreen extends AppCompatActivity {
         startActivity(nav);
     }
 
-    private void GoToHomeScreen()
-    {
-        Intent nav = new Intent(this, MainActivity.class);
-        startActivity(nav);
-    }
 
     private void GoToMapScreen()
     {

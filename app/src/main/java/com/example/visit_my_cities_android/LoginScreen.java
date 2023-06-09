@@ -34,6 +34,8 @@ public class LoginScreen extends AppCompatActivity
     private ImageView banniere_LoginScreen;
     private ImageView imageNavbar_LoginScreen;
 
+
+
     private TextView textViewPseudo_LoginScreen;
     private TextView textViewPassword_LoginScreen;
 
@@ -49,7 +51,14 @@ public class LoginScreen extends AppCompatActivity
     private ImageButton addButton_LoginScreen;
     private ImageButton accountButton_LoginScreen;
 
+
     private DBManager databaseManager;
+
+    private ImageButton mapButton4;
+    private ImageButton buildingButton4;
+    private ImageButton addButton4;
+    private ImageButton accountButton4;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -57,9 +66,11 @@ public class LoginScreen extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
 
+
         background_LoginScreen = (ImageView) findViewById(R.id.background4);
         banniere_LoginScreen = (ImageView) findViewById(R.id.banniere4);
         imageNavbar_LoginScreen = (ImageView) findViewById(R.id.imageNavbar4);
+
 
 
         textViewPseudo_LoginScreen = (EditText) findViewById(R.id.editTextPseudo);
@@ -68,6 +79,7 @@ public class LoginScreen extends AppCompatActivity
 
         SignupScreenButton_LoginScreen = (ImageButton) findViewById(R.id.SignupScreenButton);
         UserScreenButton_LoginScreen = (ImageButton) findViewById(R.id.UserScreenButton);
+
 
 
         homeButton_LoginScreen = (ImageButton) findViewById(R.id.homeButton4);
@@ -83,6 +95,7 @@ public class LoginScreen extends AppCompatActivity
             }
         });
 
+
         mapButton_LoginScreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,14 +106,14 @@ public class LoginScreen extends AppCompatActivity
         buildingButton_LoginScreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                GoToListsScreen();
+                GoToFeedScreen();
             }
         });
 
         addButton_LoginScreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                GoToFeedScreen();
+                GoToListsScreen();
             }
         });
 
@@ -131,12 +144,6 @@ public class LoginScreen extends AppCompatActivity
         startActivity(nav);
     }
 
-
-    private void GoToHomeScreen()
-    {
-        Intent nav = new Intent(this, MainActivity.class);
-        startActivity(nav);
-    }
 
     private void GoToMapScreen()
     {

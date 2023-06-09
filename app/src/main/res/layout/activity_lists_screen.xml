@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/background3"
         android:layout_width="517dp"
-        android:layout_height="965dp"
+        android:layout_height="995dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,47 +20,28 @@
         android:id="@+id/banniere3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="-10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/banniere" />
 
-    <ImageView
-        android:id="@+id/imageNavbar3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/tab_bar" />
-
-    <ImageButton
-        android:id="@+id/homeButton3"
-        android:layout_width="85dp"
-        android:layout_height="80dp"
-        android:layout_marginBottom="-5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/mapButton3"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/btn_home1" />
-
     <ImageButton
         android:id="@+id/mapButton3"
         android:layout_width="85dp"
         android:layout_height="80dp"
-        android:layout_marginBottom="-5dp"
+        android:backgroundTint="@color/common_google_signin_btn_tint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buildingButton3"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/homeButton3"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/btn_map1" />
 
     <ImageButton
         android:id="@+id/buildingButton3"
         android:layout_width="85dp"
         android:layout_height="80dp"
-        android:layout_marginBottom="-5dp"
+        android:backgroundTint="@color/common_google_signin_btn_tint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/addButton3"
         app:layout_constraintHorizontal_bias="0.5"
@@ -71,7 +52,7 @@
         android:id="@+id/addButton3"
         android:layout_width="85dp"
         android:layout_height="80dp"
-        android:layout_marginBottom="-5dp"
+        android:backgroundTint="@color/common_google_signin_btn_tint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/accountButton3"
         app:layout_constraintHorizontal_bias="0.5"
@@ -82,7 +63,7 @@
         android:id="@+id/accountButton3"
         android:layout_width="85dp"
         android:layout_height="80dp"
-        android:layout_marginBottom="-5dp"
+        android:backgroundTint="@color/common_google_signin_btn_tint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -91,11 +72,9 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="406dp"
+        android:layout_width="400dp"
         android:layout_height="500dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageNavbar3"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/banniere3"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/banniere3">
