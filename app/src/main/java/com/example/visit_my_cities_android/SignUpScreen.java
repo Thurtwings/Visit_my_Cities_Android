@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -15,6 +16,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -76,6 +78,7 @@ public class SignUpScreen extends AppCompatActivity {
         addButton5 = (ImageButton) findViewById(R.id.addButton5);
         accountButton5 = (ImageButton) findViewById(R.id.accountButton5);
 
+        databaseManager = new DBManager(getApplicationContext());
 
 
         mapButton5.setOnClickListener(new View.OnClickListener() {
@@ -102,7 +105,7 @@ public class SignUpScreen extends AppCompatActivity {
         userScreenButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                GoToProfile();
+                createUser();
             }
         });
 
@@ -165,35 +168,47 @@ public class SignUpScreen extends AppCompatActivity {
         params.put("utilisateur_mdp", password);
         JSONObject parameters = new JSONObject(params);
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, parameters, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                try {
-                    boolean success = response.getBoolean("success");
-                    if (success) {
-                        // Sign up successful
-                        Toast.makeText(getApplicationContext(), "Inscription réussie", Toast.LENGTH_LONG).show();
-                        Intent nav = new Intent(SignUpScreen.this, UserProfileScreen.class);
-                        startActivity(nav);
-                    } else {
-                        // Sign up failed
-                        Toast.makeText(getApplicationContext(), "L'inscription a échoué", Toast.LENGTH_LONG).show();
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonResponse = new JSONObject(response);
+                            String success = jsonResponse.getString("success");
+                            if (success.equals("true")) {
+                                // Sign up successful
+                                Toast.makeText(getApplicationContext(), "Inscription réussie", Toast.LENGTH_LONG).show();
+                                Intent nav = new Intent(SignUpScreen.this, UserProfileScreen.class);
+                                startActivity(nav);
+                            } else {
+                                // Sign up failed
+                                Toast.makeText(getApplicationContext(), "L'inscription a échoué", Toast.LENGTH_LONG).show();
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Toast.makeText(getApplicationContext(), "Erreur de réponse du serveur", Toast.LENGTH_LONG).show();
+                        }
                     }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Toast.makeText(getApplicationContext(), "Erreur de réponse du serveur", Toast.LENGTH_LONG).show();
-                }
-            }
-        }, new Response.ErrorListener() {
 
 
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "Erreur de connexion", Toast.LENGTH_LONG).show();
-            }
+        },
+                new Response.ErrorListener() {
+
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        if (error.networkResponse != null && error.networkResponse.data != null) {
+                            String errorStr = new String(error.networkResponse.data);
+                            Log.e("greg", "Error response from server: " + errorStr);
+                        } else {
+                            Log.e("greg", "Error connecting to server", error);
+                        }
+
+                        Toast.makeText(getApplicationContext(), "Erreur de connexion", Toast.LENGTH_LONG).show();
+                    }
         });
 
-        databaseManager.queue.add(jsonObjectRequest);
+        databaseManager.queue.add(stringRequest);
     }
 
 }
