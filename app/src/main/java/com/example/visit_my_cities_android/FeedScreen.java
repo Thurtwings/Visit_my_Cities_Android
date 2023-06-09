@@ -18,7 +18,7 @@ public class FeedScreen extends AppCompatActivity {
 
     private TextView nom2;
     private ImageView imageIllustration2;
-    private Button buttonNom2;
+    private ImageButton VisitMonumentButton;
 
     private ImageButton mapButton2;
     private ImageButton buildingButton2;
@@ -39,7 +39,7 @@ public class FeedScreen extends AppCompatActivity {
 
         imageIllustration2 = (ImageView) findViewById(R.id.imageIllustration3);
 
-        buttonNom2 = (Button) findViewById(R.id.buttonNom3);
+        VisitMonumentButton = (ImageButton) findViewById(R.id.VisitMonumentButton);
 
 
         mapButton2 = (ImageButton) findViewById(R.id.mapButton2);
