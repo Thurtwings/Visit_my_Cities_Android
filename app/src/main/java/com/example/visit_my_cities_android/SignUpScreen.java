@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -80,7 +79,6 @@ public class SignUpScreen extends AppCompatActivity {
 
         databaseManager = new DBManager(getApplicationContext());
 
-
         mapButton5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -152,9 +150,9 @@ public class SignUpScreen extends AppCompatActivity {
     public void createUser() {
         String url = "http://jdevalik.fr/api/VMC_PHP_SBG/vmc_insertuser.php";
 
-        String pseudo = editTextPseudo2.getText().toString();
-        String email = editTextMail2.getText().toString();
-        String password = editTextPassword2.getText().toString();
+        final String pseudo = editTextPseudo2.getText().toString();
+        final String email = editTextMail2.getText().toString();
+        final String password = editTextPassword2.getText().toString();
 
         if(pseudo.isEmpty() || email.isEmpty() || password.isEmpty()) {
             // Show an error if any of the fields are empty
@@ -162,20 +160,14 @@ public class SignUpScreen extends AppCompatActivity {
             return;
         }
 
-        Map<String, String> params = new HashMap<>();
-        params.put("utilisateur_pseudo", pseudo);
-        params.put("utilisateur_email", email);
-        params.put("utilisateur_mdp", password);
-        JSONObject parameters = new JSONObject(params);
-
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
                             JSONObject jsonResponse = new JSONObject(response);
-                            String success = jsonResponse.getString("success");
-                            if (success.equals("true")) {
+                            boolean success = jsonResponse.getBoolean("userCreated");
+                            if (success) {
                                 // Sign up successful
                                 Toast.makeText(getApplicationContext(), "Inscription réussie", Toast.LENGTH_LONG).show();
                                 Intent nav = new Intent(SignUpScreen.this, UserProfileScreen.class);
@@ -189,24 +181,22 @@ public class SignUpScreen extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "Erreur de réponse du serveur", Toast.LENGTH_LONG).show();
                         }
                     }
-
-
-        },
+                },
                 new Response.ErrorListener() {
-
-
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        if (error.networkResponse != null && error.networkResponse.data != null) {
-                            String errorStr = new String(error.networkResponse.data);
-                            Log.e("greg", "Error response from server: " + errorStr);
-                        } else {
-                            Log.e("greg", "Error connecting to server", error);
-                        }
-
                         Toast.makeText(getApplicationContext(), "Erreur de connexion", Toast.LENGTH_LONG).show();
                     }
-        });
+                }) {
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<>();
+                params.put("utilisateur_pseudo", pseudo);
+                params.put("utilisateur_email", email);
+                params.put("utilisateur_mdp", password);
+                return params;
+            }
+        };
 
         databaseManager.queue.add(stringRequest);
     }
