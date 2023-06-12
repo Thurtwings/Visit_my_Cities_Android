@@ -3,6 +3,8 @@ package com.example.visit_my_cities_android;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -15,6 +17,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -47,11 +50,14 @@ public class SignUpScreen extends AppCompatActivity {
 
     private DBManager databaseManager;
 
+    UserDataHandler dbHandler = new UserDataHandler(this);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_screen);
 
+        dbHandler = new UserDataHandler(this);
         background5 = (ImageView) findViewById(R.id.background5);
         banniere5 = (ImageView) findViewById(R.id.banniere5);
 
@@ -76,7 +82,7 @@ public class SignUpScreen extends AppCompatActivity {
         addButton5 = (ImageButton) findViewById(R.id.addButton5);
         accountButton5 = (ImageButton) findViewById(R.id.accountButton5);
 
-
+        databaseManager = new DBManager(getApplicationContext());
 
         mapButton5.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,7 +108,7 @@ public class SignUpScreen extends AppCompatActivity {
         userScreenButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                GoToProfile();
+                createUser();
             }
         });
 
@@ -112,8 +118,30 @@ public class SignUpScreen extends AppCompatActivity {
                 GoToLogin();
             }
         });
-    }
 
+//        userScreenButton2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                String pseudo = editTextPseudo2.getText().toString();
+//                String mail = editTextMail2.getText().toString();
+//                String password = editTextPassword2.getText().toString();
+//                SQLiteDatabase db = dbHandler.getWritableDatabase();
+//
+//                dbHandler.addNewUser(db, pseudo, mail, password);
+//                String result = dbHandler.getUserInfo("userPseudo", "userPseudo", pseudo);
+//                if (result != null) {
+//                    Toast.makeText(getApplicationContext(), "Bienvenue " + result +", merci de vous connecter", Toast.LENGTH_LONG).show();
+//                    GoToLogin();
+//                    //dbHandler.truncateUserTable();
+//                    //dbHandler.printUserList();
+//                }
+//
+//
+//
+//            }
+//        });
+    }
 
     private void GoToLogin()
     {
@@ -149,9 +177,9 @@ public class SignUpScreen extends AppCompatActivity {
     public void createUser() {
         String url = "http://jdevalik.fr/api/VMC_PHP_SBG/vmc_insertuser.php";
 
-        String pseudo = editTextPseudo2.getText().toString();
-        String email = editTextMail2.getText().toString();
-        String password = editTextPassword2.getText().toString();
+        final String pseudo = editTextPseudo2.getText().toString();
+        final String email = editTextMail2.getText().toString();
+        final String password = editTextPassword2.getText().toString();
 
         if(pseudo.isEmpty() || email.isEmpty() || password.isEmpty()) {
             // Show an error if any of the fields are empty
@@ -159,41 +187,45 @@ public class SignUpScreen extends AppCompatActivity {
             return;
         }
 
-        Map<String, String> params = new HashMap<>();
-        params.put("utilisateur_pseudo", pseudo);
-        params.put("utilisateur_email", email);
-        params.put("utilisateur_mdp", password);
-        JSONObject parameters = new JSONObject(params);
-
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, parameters, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                try {
-                    boolean success = response.getBoolean("success");
-                    if (success) {
-                        // Sign up successful
-                        Toast.makeText(getApplicationContext(), "Inscription réussie", Toast.LENGTH_LONG).show();
-                        Intent nav = new Intent(SignUpScreen.this, UserProfileScreen.class);
-                        startActivity(nav);
-                    } else {
-                        // Sign up failed
-                        Toast.makeText(getApplicationContext(), "L'inscription a échoué", Toast.LENGTH_LONG).show();
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonResponse = new JSONObject(response);
+                            boolean success = jsonResponse.getBoolean("userCreated");
+                            if (success) {
+                                // Sign up successful
+                                Toast.makeText(getApplicationContext(), "Inscription réussie", Toast.LENGTH_LONG).show();
+                                Intent nav = new Intent(SignUpScreen.this, UserProfileScreen.class);
+                                startActivity(nav);
+                            } else {
+                                // Sign up failed
+                                Toast.makeText(getApplicationContext(), "L'inscription a échoué", Toast.LENGTH_LONG).show();
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Toast.makeText(getApplicationContext(), "Erreur de réponse du serveur", Toast.LENGTH_LONG).show();
+                        }
                     }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Toast.makeText(getApplicationContext(), "Erreur de réponse du serveur", Toast.LENGTH_LONG).show();
-                }
-            }
-        }, new Response.ErrorListener() {
-
-
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getApplicationContext(), "Erreur de connexion", Toast.LENGTH_LONG).show();
+                    }
+                }) {
             @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "Erreur de connexion", Toast.LENGTH_LONG).show();
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<>();
+                params.put("utilisateur_pseudo", pseudo);
+                params.put("utilisateur_email", email);
+                params.put("utilisateur_mdp", password);
+                return params;
             }
-        });
+        };
 
-        databaseManager.queue.add(jsonObjectRequest);
+        databaseManager.queue.add(stringRequest);
     }
 
 }

@@ -123,7 +123,7 @@ public class MapScreen extends AppCompatActivity implements OnMapReadyCallback {
             }
             else
             {
-                Toast.makeText(this, "Permission d'acceder a la localisation refusée, merci de l'autoriser", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Permission d'accéder a la localisation refusée, merci de l'autoriser pour pouvoir continuer", Toast.LENGTH_SHORT).show();
             }
         }
     }
