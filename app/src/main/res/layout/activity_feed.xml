@@ -126,7 +126,7 @@
 
                     <ImageView
                         android:id="@+id/imageIllustration3"
-                        android:layout_width="155dp"
+                        android:layout_width="164dp"
                         android:layout_height="108dp"
                         app:srcCompat="@drawable/placeholder" />
 
@@ -134,11 +134,16 @@
                         android:layout_width="170dp"
                         android:layout_height="match_parent">
 
+                        <TableRow
+                            android:layout_width="14dp"
+                            android:layout_height="match_parent" />
+
                         <TextView
                             android:id="@+id/nom3"
-                            android:layout_width="47dp"
+                            android:layout_width="62dp"
                             android:layout_height="match_parent"
-                            android:text="Nom" />
+                            android:text="Nom"
+                            android:textColor="@color/black" />
 
                         <TableRow
                             android:layout_width="match_parent"
@@ -149,14 +154,16 @@
                                 android:layout_height="match_parent">
 
                                 <TableRow
-                                    android:layout_width="23dp"
+                                    android:layout_width="14dp"
                                     android:layout_height="match_parent" />
 
-                                <Button
-                                    android:id="@+id/buttonNom3"
+                                <ImageButton
+                                    android:id="@+id/VisitMonumentButton"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="92dp"
-                                    android:text="Valider" />
+                                    android:layout_height="match_parent"
+                                    android:backgroundTint="@color/common_google_signin_btn_tint"
+                                    app:srcCompat="@drawable/btn_valide" />
+
                             </TableRow>
 
                         </TableRow>

@@ -17,7 +17,7 @@ public class ListsScreen extends AppCompatActivity {
 
     private TextView nom3;
     private ImageView imageIllustration3;
-    private Button buttonNom3;
+    private ImageButton valideMonumentButton;
 
     private ImageButton mapButton3;
     private ImageButton buildingButton3;
@@ -37,7 +37,7 @@ public class ListsScreen extends AppCompatActivity {
 
         imageIllustration3 = (ImageView) findViewById(R.id.imageIllustration3);
 
-        buttonNom3 = (Button) findViewById(R.id.buttonNom3);
+        valideMonumentButton = (ImageButton) findViewById(R.id.valideMonumentButton);
 
 
         mapButton3 = (ImageButton) findViewById(R.id.mapButton3);
