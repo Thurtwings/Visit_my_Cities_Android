@@ -8,7 +8,7 @@
 
     <ImageView
         android:id="@+id/background5"
-        android:layout_width="515dp"
+        android:layout_width="wrap_content"
         android:layout_height="994dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
