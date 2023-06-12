@@ -3,6 +3,8 @@ package com.example.visit_my_cities_android;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -48,11 +50,14 @@ public class SignUpScreen extends AppCompatActivity {
 
     private DBManager databaseManager;
 
+    UserDataHandler dbHandler = new UserDataHandler(this);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_screen);
 
+        dbHandler = new UserDataHandler(this);
         background5 = (ImageView) findViewById(R.id.background5);
         banniere5 = (ImageView) findViewById(R.id.banniere5);
 
@@ -113,8 +118,30 @@ public class SignUpScreen extends AppCompatActivity {
                 GoToLogin();
             }
         });
-    }
 
+//        userScreenButton2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                String pseudo = editTextPseudo2.getText().toString();
+//                String mail = editTextMail2.getText().toString();
+//                String password = editTextPassword2.getText().toString();
+//                SQLiteDatabase db = dbHandler.getWritableDatabase();
+//
+//                dbHandler.addNewUser(db, pseudo, mail, password);
+//                String result = dbHandler.getUserInfo("userPseudo", "userPseudo", pseudo);
+//                if (result != null) {
+//                    Toast.makeText(getApplicationContext(), "Bienvenue " + result +", merci de vous connecter", Toast.LENGTH_LONG).show();
+//                    GoToLogin();
+//                    //dbHandler.truncateUserTable();
+//                    //dbHandler.printUserList();
+//                }
+//
+//
+//
+//            }
+//        });
+    }
 
     private void GoToLogin()
     {
