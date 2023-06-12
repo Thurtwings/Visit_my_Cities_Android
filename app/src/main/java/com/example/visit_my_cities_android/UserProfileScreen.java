@@ -32,6 +32,8 @@ public class UserProfileScreen extends AppCompatActivity
     private ImageButton addButton_UPS;
     private ImageButton accountButton_UPS;
 
+    UserDataHandler dbHandler = new UserDataHandler(this);
+
     public static String CurrentUser;
 
 
