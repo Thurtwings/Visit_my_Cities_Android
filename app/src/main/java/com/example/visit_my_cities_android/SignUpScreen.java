@@ -119,28 +119,28 @@ public class SignUpScreen extends AppCompatActivity {
             }
         });
 
-//        userScreenButton2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                String pseudo = editTextPseudo2.getText().toString();
-//                String mail = editTextMail2.getText().toString();
-//                String password = editTextPassword2.getText().toString();
-//                SQLiteDatabase db = dbHandler.getWritableDatabase();
-//
-//                dbHandler.addNewUser(db, pseudo, mail, password);
-//                String result = dbHandler.getUserInfo("userPseudo", "userPseudo", pseudo);
-//                if (result != null) {
-//                    Toast.makeText(getApplicationContext(), "Bienvenue " + result +", merci de vous connecter", Toast.LENGTH_LONG).show();
-//                    GoToLogin();
-//                    //dbHandler.truncateUserTable();
-//                    //dbHandler.printUserList();
-//                }
-//
-//
-//
-//            }
-//        });
+        /*userScreenButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String pseudo = editTextPseudo2.getText().toString();
+                String mail = editTextMail2.getText().toString();
+                String password = editTextPassword2.getText().toString();
+                SQLiteDatabase db = dbHandler.getWritableDatabase();
+
+                dbHandler.addNewUser(db, pseudo, mail, password);
+                String result = dbHandler.getUserInfo("userPseudo", "userPseudo", pseudo);
+                if (result != null) {
+                    Toast.makeText(getApplicationContext(), "Bienvenue " + result +", merci de vous connecter", Toast.LENGTH_LONG).show();
+                    GoToLogin();
+                    //dbHandler.truncateUserTable();
+                    //dbHandler.printUserList();
+                }
+
+
+
+            }
+        });*/
     }
 
     private void GoToLogin()

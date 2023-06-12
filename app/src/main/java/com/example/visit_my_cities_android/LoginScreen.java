@@ -141,8 +141,7 @@ public class LoginScreen extends AppCompatActivity
     }
 
 
-    private void GoToMapScreen()
-    {
+    private void GoToMapScreen() {
         Intent nav = new Intent(this, MapScreen.class);
         startActivity(nav);
     }
