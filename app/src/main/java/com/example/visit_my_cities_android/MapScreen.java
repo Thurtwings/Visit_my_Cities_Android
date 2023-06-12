@@ -29,14 +29,12 @@ import com.google.android.gms.tasks.Task;
 public class MapScreen extends AppCompatActivity implements OnMapReadyCallback {
 
     private ImageView banniere1;
-    private ImageView imageNavbar1;
 
     private final int FINE_PERMISSION_CODE = 1;
     private GoogleMap mainMap;
     Location currentLocation;
     FusedLocationProviderClient fusedLocationProviderClient;
 
-    private ImageButton homeButton1;
     private ImageButton mapButton1;
     private ImageButton buildingButton1;
     private ImageButton addButton1;
@@ -48,10 +46,8 @@ public class MapScreen extends AppCompatActivity implements OnMapReadyCallback {
         setContentView(R.layout.activity_map_display);
 
         banniere1 = (ImageView) findViewById(R.id.banniere1);
-        imageNavbar1 = (ImageView) findViewById(R.id.imageNavbar1);
 
 
-        homeButton1 = (ImageButton) findViewById(R.id.homeButton1);
         mapButton1 = (ImageButton) findViewById(R.id.mapButton1);
         buildingButton1 = (ImageButton) findViewById(R.id.buildingButton1);
         addButton1 = (ImageButton) findViewById(R.id.addButton1);
@@ -60,13 +56,6 @@ public class MapScreen extends AppCompatActivity implements OnMapReadyCallback {
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         GetLastLocation();
 
-
-        homeButton1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                GoToHomeScreen();
-            }
-        });
 
         buildingButton1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -134,7 +123,7 @@ public class MapScreen extends AppCompatActivity implements OnMapReadyCallback {
             }
             else
             {
-                Toast.makeText(this, "Permission d'acceder a la localisation refusée, merci de l'autoriser", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Permission d'accéder a la localisation refusée, merci de l'autoriser pour pouvoir continuer", Toast.LENGTH_SHORT).show();
             }
         }
     }
