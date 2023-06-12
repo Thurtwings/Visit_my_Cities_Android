@@ -3,6 +3,8 @@ package com.example.visit_my_cities_android;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -59,6 +61,7 @@ public class LoginScreen extends AppCompatActivity
     private ImageButton addButton4;
     private ImageButton accountButton4;
 
+    UserDataHandler dbHandler = new UserDataHandler(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
