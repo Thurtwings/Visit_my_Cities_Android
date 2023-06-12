@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/common_google_signin_btn_tint"
     tools:context=".ListsScreen">
 
     <ImageView
@@ -72,10 +73,11 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="400dp"
-        android:layout_height="500dp"
+        android:layout_width="350dp"
+        android:layout_height="430dp"
+        android:layout_marginTop="70dp"
+        app:layout_constraintBottom_toTopOf="@+id/addButton3"
         app:layout_constraintEnd_toEndOf="@id/banniere3"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/banniere3">
 
@@ -84,71 +86,76 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ScrollView
+            <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.491"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="281dp">
+                android:layout_height="match_parent">
 
-                <LinearLayout
+                <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_height="match_parent">
 
-                    <TableLayout
-                        android:layout_width="match_parent"
+                    <ImageView
+                        android:id="@+id/imageIllustration3"
+                        android:layout_width="164dp"
+                        android:layout_height="108dp"
+                        app:srcCompat="@drawable/placeholder" />
+
+                    <TableRow
+                        android:layout_width="170dp"
                         android:layout_height="match_parent">
+
+                        <TableRow
+                            android:layout_width="16dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:id="@+id/nom3"
+                            android:layout_width="62dp"
+                            android:layout_height="match_parent"
+                            android:text="Nom"
+                            android:textColor="@color/black" />
 
                         <TableRow
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
-                            <ImageView
-                                android:id="@+id/imageIllustration3"
-                                android:layout_width="174dp"
-                                android:layout_height="108dp"
-                                app:srcCompat="@drawable/placeholder" />
-
                             <TableRow
-                                android:layout_width="170dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent">
 
-                                <TextView
-                                    android:id="@+id/nom3"
-                                    android:layout_width="47dp"
-                                    android:layout_height="match_parent"
-                                    android:text="Nom" />
-
                                 <TableRow
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
+                                    android:layout_width="16dp"
+                                    android:layout_height="match_parent" />
 
-                                    <TableRow
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent">
-
-                                        <TableRow
-                                            android:layout_width="23dp"
-                                            android:layout_height="match_parent" />
-
-                                        <Button
-                                            android:id="@+id/buttonNom3"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="92dp"
-                                            android:text="Valider" />
-                                    </TableRow>
-
-                                </TableRow>
+                                <ImageButton
+                                    android:id="@+id/valideMonumentButton"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:backgroundTint="@color/common_google_signin_btn_tint"
+                                    app:srcCompat="@drawable/btn_valide" />
 
                             </TableRow>
 
                         </TableRow>
 
-                    </TableLayout>
-                </LinearLayout>
-            </ScrollView>
+                    </TableRow>
+
+                </TableRow>
+
+            </TableLayout>
+
         </LinearLayout>
     </ScrollView>
+
+    <ImageButton
+        android:id="@+id/addMonumentButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/common_google_signin_btn_tint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/banniere3"
+        app:srcCompat="@drawable/ajout_favori_list" />
 </androidx.constraintlayout.widget.ConstraintLayout>

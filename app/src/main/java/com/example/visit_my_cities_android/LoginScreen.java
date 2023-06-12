@@ -34,7 +34,7 @@ public class LoginScreen extends AppCompatActivity
 
     private ImageView background_LoginScreen;
     private ImageView banniere_LoginScreen;
-    private ImageView imageNavbar_LoginScreen;
+
 
 
 
@@ -47,7 +47,7 @@ public class LoginScreen extends AppCompatActivity
     private ImageButton SignupScreenButton_LoginScreen;
     private ImageButton UserScreenButton_LoginScreen;
 
-    private ImageButton homeButton_LoginScreen;
+
     private ImageButton mapButton_LoginScreen;
     private ImageButton buildingButton_LoginScreen;
     private ImageButton addButton_LoginScreen;
@@ -72,8 +72,6 @@ public class LoginScreen extends AppCompatActivity
 
         background_LoginScreen = (ImageView) findViewById(R.id.background4);
         banniere_LoginScreen = (ImageView) findViewById(R.id.banniere4);
-
-
 
 
         textViewPseudo_LoginScreen = (EditText) findViewById(R.id.editTextPseudo);
