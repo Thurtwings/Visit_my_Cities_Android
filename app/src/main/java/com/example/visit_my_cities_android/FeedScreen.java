@@ -11,7 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-public class FeedScreen extends AppCompatActivity {
+public class
+FeedScreen extends AppCompatActivity {
 
     private ImageView background2;
     private ImageView banniere2;

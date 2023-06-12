@@ -5,12 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
+
 
 public class UserProfileScreen extends AppCompatActivity
 {
@@ -18,20 +17,24 @@ public class UserProfileScreen extends AppCompatActivity
     private ImageView background6;
     private ImageView banniere6;
 
-    private TextView textViewPseudo3;
-    private TextView textViewMail3;
-    private TextView textViewEmail;
-    private TextView textViewPassword3;
-    private TextView textViewPassWord;
+    private TextView textViewPseudo_UPS;
+    private TextView textViewMail_UPS;
+    private TextView textViewEmail_UPS;
+    private TextView textViewMotDePasse_UPS;
+    private TextView textViewPassWord_UPS;
 
-    private ImageButton deconnectButton;
+    private ImageButton deconnectButton_UPS;
 
-    private ImageButton favoriListButton;
+    private ImageButton favoriListButton_UPS;
 
-    private ImageButton mapButton6;
-    private ImageButton buildingButton6;
-    private ImageButton addButton6;
-    private ImageButton accountButton6;
+    private ImageButton mapButton_UPS;
+    private ImageButton buildingButton_UPS;
+    private ImageButton addButton_UPS;
+    private ImageButton accountButton_UPS;
+
+    UserDataHandler dbHandler = new UserDataHandler(this);
+
+    public static String CurrentUser;
 
 
     @Override
@@ -43,40 +46,40 @@ public class UserProfileScreen extends AppCompatActivity
         background6 = (ImageView) findViewById(R.id.background6);
         banniere6 = (ImageView) findViewById(R.id.banniere6);
 
-
-        textViewPseudo3 = (TextView) findViewById(R.id.textViewPseudo3);
-        textViewMail3 = (TextView) findViewById(R.id.textViewMail3);
-        textViewEmail = (TextView) findViewById(R.id.textViewEmail);
-        textViewPassword3 = (TextView) findViewById(R.id.textViewPassword3);
-        textViewPassWord = (TextView) findViewById(R.id.textViewPassWord);
-
-
-        deconnectButton = (ImageButton) findViewById(R.id.deconnectButton);
-        favoriListButton = (ImageButton) findViewById(R.id.favoriListButton);
+        //UPS = UserProfileScreen 
+        textViewPseudo_UPS = (TextView) findViewById(R.id.textViewPseudo3);
+        textViewMail_UPS = (TextView) findViewById(R.id.textViewMail3);
+        textViewEmail_UPS = (TextView) findViewById(R.id.textViewEmail);
+        textViewMotDePasse_UPS = (TextView) findViewById(R.id.textViewPassword3);
+        textViewPassWord_UPS = (TextView) findViewById(R.id.textViewPassWord);
 
 
-        mapButton6 = (ImageButton) findViewById(R.id.mapButton6);
-        buildingButton6 = (ImageButton) findViewById(R.id.buildingButton6);
-        addButton6 = (ImageButton) findViewById(R.id.addButton6);
-        accountButton6 = (ImageButton) findViewById(R.id.accountButton6);
+        deconnectButton_UPS = (ImageButton) findViewById(R.id.deconnectButton);
+        favoriListButton_UPS = (ImageButton) findViewById(R.id.favoriListButton);
+
+
+        mapButton_UPS = (ImageButton) findViewById(R.id.mapButton6);
+        buildingButton_UPS = (ImageButton) findViewById(R.id.buildingButton6);
+        addButton_UPS = (ImageButton) findViewById(R.id.addButton6);
+        accountButton_UPS = (ImageButton) findViewById(R.id.accountButton6);
 
 
 
-        mapButton6.setOnClickListener(new View.OnClickListener() {
+        mapButton_UPS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 GoToMapScreen();
             }
         });
 
-        buildingButton6.setOnClickListener(new View.OnClickListener() {
+        buildingButton_UPS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 GoToFeedScreen();
             }
         });
 
-        addButton6.setOnClickListener(new View.OnClickListener() {
+        addButton_UPS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 GoToListsScreen();

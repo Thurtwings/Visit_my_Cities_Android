@@ -3,6 +3,8 @@ package com.example.visit_my_cities_android;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -59,6 +61,7 @@ public class LoginScreen extends AppCompatActivity
     private ImageButton addButton4;
     private ImageButton accountButton4;
 
+    UserDataHandler dbHandler = new UserDataHandler(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -69,7 +72,7 @@ public class LoginScreen extends AppCompatActivity
 
         background_LoginScreen = (ImageView) findViewById(R.id.background4);
         banniere_LoginScreen = (ImageView) findViewById(R.id.banniere4);
-        imageNavbar_LoginScreen = (ImageView) findViewById(R.id.imageNavbar4);
+
 
 
 
@@ -81,19 +84,12 @@ public class LoginScreen extends AppCompatActivity
         UserScreenButton_LoginScreen = (ImageButton) findViewById(R.id.UserScreenButton);
 
 
-
-        homeButton_LoginScreen = (ImageButton) findViewById(R.id.homeButton4);
         mapButton_LoginScreen = (ImageButton) findViewById(R.id.mapButton4);
         buildingButton_LoginScreen = (ImageButton) findViewById(R.id.buildingButton4);
         addButton_LoginScreen = (ImageButton) findViewById(R.id.addButton4);
         accountButton_LoginScreen = (ImageButton) findViewById(R.id.accountButton4);
         databaseManager = new DBManager(getApplicationContext());
-        homeButton_LoginScreen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                GoToHomeScreen();
-            }
-        });
+
 
 
         mapButton_LoginScreen.setOnClickListener(new View.OnClickListener() {
