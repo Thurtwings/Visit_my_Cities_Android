@@ -95,15 +95,8 @@
         android:layout_marginTop="20dp"
         android:ems="10"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewMail2" />
-<<<<<<< HEAD
-        android:inputType="textPassword"
-        android:textColor="@color/black"
-=======
-        android:inputType="textEmailAddress"
->>>>>>> 5e04f70d504897a55148c2426b5aef0c71a8ada3
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewMail2" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewMail2"
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/editTextPassword2"
