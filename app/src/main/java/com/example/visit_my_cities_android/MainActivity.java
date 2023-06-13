@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity
 {
     private ImageView background;
     private ImageView logoButton;
-    UserDataHandler db = new UserDataHandler(this);
+    //UserDataHandler db = new UserDataHandler(this);
 
     // Cette méthode est appelée lors de la création de l'activité
     @Override
@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         background = (ImageView) findViewById(R.id.background);
         logoButton = (ImageView) findViewById(R.id.logoButton);
-        db.printUserList();
+        //db.printUserList();
         logoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
