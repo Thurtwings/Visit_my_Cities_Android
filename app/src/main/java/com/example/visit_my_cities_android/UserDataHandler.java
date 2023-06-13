@@ -4,14 +4,15 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 
 public class UserDataHandler extends SQLiteOpenHelper
 {
     public static final String  DROP_DATABASE_USER= "DROP TABLE IF EXISTS vmc_utilisateur_sbg;";
     public static final String CREATE_DATABASE_USER =
-            "CREATE TABLE vmc_utilisateur_sbg (utilisateur_id INTEGER PRIMARY KEY AUTOINCREMENT, utilisateur_pseudo VARCHAR, utilisateur_email VARCHAR, utilisateur_mdp VARCHAR, utilisateur_photo TEXT, utilisateur_role VARCHAR);";
-    public static final String INSERT_DATABASE_USER = " INSERT INTO vmc_utilisateur_sbg(utilisateur_pseudo, utilisateur_email, utilisateur_mdp, utilisateur_photo, utilisateur_role) VALUES ";
+            "CREATE TABLE vmc_utilisateur_sbg (userId INTEGER PRIMARY KEY AUTOINCREMENT, userPseudo VARCHAR, userMail VARCHAR, userPassword VARCHAR, userPicture TEXT, userRole VARCHAR);";
+    public static final String INSERT_DATABASE_USER = " INSERT INTO vmc_utilisateur_sbg(userPseudo, userMail, userPassword, userPicture, userRole) VALUES ";
 
     public UserDataHandler(Context context) {
         super(context, "database.db", null, 1);
@@ -107,7 +108,5 @@ public class UserDataHandler extends SQLiteOpenHelper
         db.execSQL("UPDATE sqlite_sequence SET seq = 0 WHERE name = 'User';");
         db.close();
     }
-
-
 
 }
