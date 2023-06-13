@@ -84,6 +84,8 @@ public class SignUpScreen extends AppCompatActivity {
 
         databaseManager = new DBManager(getApplicationContext());
 
+
+
         mapButton5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -226,6 +228,8 @@ public class SignUpScreen extends AppCompatActivity {
         };
 
         databaseManager.queue.add(stringRequest);
+
+        //dbHandler.printUserList();
     }
 
 }
