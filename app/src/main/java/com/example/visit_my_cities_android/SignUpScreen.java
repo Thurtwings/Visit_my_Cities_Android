@@ -175,8 +175,6 @@ public class SignUpScreen extends AppCompatActivity {
     }
 
     public void createUser() {
-        String url = "http://jdevalik.fr/api/VMC_PHP_SBG/vmc_insertuser.php";
-
         final String pseudo = editTextPseudo2.getText().toString();
         final String email = editTextMail2.getText().toString();
         final String password = editTextPassword2.getText().toString();
@@ -187,6 +185,8 @@ public class SignUpScreen extends AppCompatActivity {
             return;
         }
 
+        String url = "http://jdevalik.fr/api/VMC_PHP_SBG/vmc_insertuser.php";
+
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
                     @Override
@@ -195,10 +195,12 @@ public class SignUpScreen extends AppCompatActivity {
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("userCreated");
                             if (success) {
-                                // Sign up successful
+                                // Remote server sign up successful, now save in local SQLite database
+                                SQLiteDatabase db = dbHandler.getWritableDatabase();
+                                dbHandler.addNewUser(db, pseudo, email, password, "null", "User");
+                                db.close();
                                 Toast.makeText(getApplicationContext(), "Inscription réussie", Toast.LENGTH_LONG).show();
-                                Intent nav = new Intent(SignUpScreen.this, UserProfileScreen.class);
-                                startActivity(nav);
+                                GoToLogin();
                             } else {
                                 // Sign up failed
                                 Toast.makeText(getApplicationContext(), "L'inscription a échoué", Toast.LENGTH_LONG).show();
@@ -227,5 +229,6 @@ public class SignUpScreen extends AppCompatActivity {
 
         databaseManager.queue.add(stringRequest);
     }
+
 
 }

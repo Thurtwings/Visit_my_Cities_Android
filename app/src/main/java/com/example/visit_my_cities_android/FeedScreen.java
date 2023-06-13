@@ -10,6 +10,10 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.toolbox.StringRequest;
+
 
 public class
 FeedScreen extends AppCompatActivity {
@@ -89,4 +93,15 @@ FeedScreen extends AppCompatActivity {
         Intent nav = new Intent(this, LoginScreen.class);
         startActivity(nav);
     }
+
+    /*public void DisplayAllBuildings()
+    {
+        String url = "http://jdevalik.fr/api/VMC_PHP_SBG/vmc_get_buildings_sbg.php";
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+            }
+        });
+    }*/
 }

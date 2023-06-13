@@ -13,7 +13,9 @@
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/background" android:layout_height="" android:layout_width=""/>
+        app:srcCompat="@drawable/background"
+        android:layout_height="517dp"
+        android:layout_width="995dp"/>
 
     <ImageView
         android:id="@+id/banniere5"
