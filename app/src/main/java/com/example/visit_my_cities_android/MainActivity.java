@@ -1,68 +1,41 @@
 package com.example.visit_my_cities_android;
 
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageView;
 
 
 public class MainActivity extends AppCompatActivity
 {
+    private ImageView background;
+    private ImageView logoButton;
+    UserDataHandler db = new UserDataHandler(this);
 
-
-    private Button homeScreenMapButton;
-    private Button homeScreenLoginButton;
-    private Button homeScreenFeedButton;
+    // Cette méthode est appelée lors de la création de l'activité
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        homeScreenMapButton = (Button) findViewById(R.id.HomeScreenMapButton);
-        homeScreenLoginButton = (Button) findViewById(R.id.homeScreenConnectButton);
-        homeScreenFeedButton = (Button) findViewById(R.id.FeedButton);
-
-        homeScreenMapButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                GoToMapScreen();
-            }
-        });
-        homeScreenLoginButton.setOnClickListener(new View.OnClickListener() {
+        background = (ImageView) findViewById(R.id.background);
+        logoButton = (ImageView) findViewById(R.id.logoButton);
+        db.printUserList();
+        logoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 GoToLoginScreen();
             }
         });
 
-        homeScreenFeedButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                GoToFeedScreen();
-            }
-        });
     }
 
-    private void GoToFeedScreen()
-    {
-        Intent nav = new Intent(this, FeedScreen.class);
-        startActivity(nav);
-    }
-
+    // Méthode pour aller à l'écran de connexion
     private void GoToLoginScreen()
     {
         Intent nav = new Intent(this, LoginScreen.class);
         startActivity(nav);
     }
-
-    private void GoToMapScreen()
-    {
-        Intent nav = new Intent(this, MapScreen.class);
-        startActivity(nav);
-    }
-
-
 }
