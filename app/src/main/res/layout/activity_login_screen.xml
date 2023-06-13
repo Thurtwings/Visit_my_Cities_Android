@@ -75,8 +75,8 @@
         android:id="@+id/textViewPseudo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="84dp"
         android:text="Pseudo"
         android:textColor="@color/black"
         android:textSize="20dp"
@@ -88,36 +88,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="35dp"
         android:text="Mot de Passe"
         android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewPseudo" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPseudo" />
 
     <EditText
         android:id="@+id/editTextPseudo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="text"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/banniere4" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPseudo" />
 
     <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="text"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPseudo" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPassword" />
 
     <ImageButton
         android:id="@+id/SignupScreenButton"
@@ -134,7 +134,7 @@
         android:id="@+id/UserScreenButton"
         android:layout_width="290dp"
         android:layout_height="66dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="15dp"
         android:backgroundTint="@color/common_google_signin_btn_tint"
         app:layout_constraintBottom_toTopOf="@+id/SignupScreenButton"
         app:layout_constraintEnd_toEndOf="parent"
