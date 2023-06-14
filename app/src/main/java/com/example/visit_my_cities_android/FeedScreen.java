@@ -165,8 +165,8 @@ public class FeedScreen extends AppCompatActivity {
 
             public BuildingViewHolder(View itemView) {
                 super(itemView);
-                imageIllustration = itemView.findViewById(R.id.imageIllustration3);
-                nom = itemView.findViewById(R.id.nom3);
+                imageIllustration = itemView.findViewById(R.id.imageIllustration);
+                nom = itemView.findViewById(R.id.travel_nom);
             }
 
             public void bind(Building building) {

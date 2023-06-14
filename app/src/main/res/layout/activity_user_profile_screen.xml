@@ -28,17 +28,6 @@
         app:srcCompat="@drawable/banniere" />
 
     <ImageButton
-        android:id="@+id/AvatarButton"
-        android:layout_width="115dp"
-        android:layout_height="115dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="20dp"
-        android:backgroundTint="@color/common_google_signin_btn_tint"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/banniere6"
-        app:srcCompat="@drawable/btn_building_avatar" />
-
-    <ImageButton
         android:id="@+id/deconnectButton"
         android:layout_width="310dp"
         android:layout_height="45dp"
@@ -53,11 +42,11 @@
         android:id="@+id/textViewPseudo3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
         android:layout_marginTop="50dp"
         android:text="Pseudo"
         android:textColor="@color/black"
         android:textSize="45dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/banniere6" />
 

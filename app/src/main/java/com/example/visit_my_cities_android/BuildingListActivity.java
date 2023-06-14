@@ -1,6 +1,5 @@
 package com.example.visit_my_cities_android;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -133,8 +132,8 @@ public class BuildingListActivity extends AppCompatActivity {
 
             public BuildingViewHolder(View itemView) {
                 super(itemView);
-                imageIllustration = itemView.findViewById(R.id.imageIllustration3);
-                nom = itemView.findViewById(R.id.nom3);
+                imageIllustration = itemView.findViewById(R.id.imageIllustration);
+                nom = itemView.findViewById(R.id.travel_nom);
             }
 
             public void bind(Building building) {

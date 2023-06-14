@@ -50,8 +50,8 @@ public class BuildingAdapter extends RecyclerView.Adapter<BuildingAdapter.Buildi
 
         public BuildingViewHolder(View itemView) {
             super(itemView);
-            imageIllustration = itemView.findViewById(R.id.imageIllustration3);
-            nom = itemView.findViewById(R.id.nom3);
+            imageIllustration = itemView.findViewById(R.id.imageIllustration);
+            nom = itemView.findViewById(R.id.travel_nom);
         }
 
         public void bind(Building building) {

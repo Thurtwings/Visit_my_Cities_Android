@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -33,9 +32,9 @@ public class ListsScreen extends AppCompatActivity {
         background3 = (ImageView) findViewById(R.id.background3);
         banniere3 = (ImageView) findViewById(R.id.banniere3);
 
-        nom3 = (TextView) findViewById(R.id.nom3);
+        nom3 = (TextView) findViewById(R.id.travel_nom);
 
-        imageIllustration3 = (ImageView) findViewById(R.id.imageIllustration3);
+        imageIllustration3 = (ImageView) findViewById(R.id.imageIllustration);
 
         valideMonumentButton = (ImageButton) findViewById(R.id.valideMonumentButton);
 
