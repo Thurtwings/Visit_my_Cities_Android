@@ -1,4 +1,5 @@
 package com.example.visit_my_cities_android;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -30,11 +32,26 @@ public class FeedScreen extends AppCompatActivity {
     private RecyclerView recyclerView;
     private BuildingAdapter buildingAdapter;
     private List<Building> buildingList;
+    private ImageView background2;
+    private ImageView banniere2;
+
+    private ImageButton mapButton2;
+    private ImageButton buildingButton2;
+    private ImageButton addButton2;
+    private ImageButton accountButton2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed);
+
+        background2 = findViewById(R.id.background2);
+        banniere2 = findViewById(R.id.banniere2);
+
+        mapButton2 = findViewById(R.id.mapButton2);
+        buildingButton2 = findViewById(R.id.buildingButton2);
+        addButton2 = findViewById(R.id.addButton2);
+        accountButton2 = findViewById(R.id.accountButton2);
 
         recyclerView = findViewById(R.id.buildingRecyclerView);
         recyclerView.setHasFixedSize(true);
@@ -43,6 +60,27 @@ public class FeedScreen extends AppCompatActivity {
         buildingList = new ArrayList<>();
         buildingAdapter = new BuildingAdapter(buildingList);
         recyclerView.setAdapter(buildingAdapter);
+
+        mapButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                GoToMapScreen();
+            }
+        });
+
+        addButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                GoToListsScreen();
+            }
+        });
+
+        accountButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                GoToLoginScreen();
+            }
+        });
 
         fetchBuildings();
     }
@@ -67,9 +105,10 @@ public class FeedScreen extends AppCompatActivity {
                             String buildingName = buildingObject.getString("batiment_nom");
                             String buildingAddress = buildingObject.getString("batiment_adresse");
                             String buildingPhotoUrl = buildingObject.getString("batiment_lien_photo");
+                            String buildingDescription = buildingObject.getString("batiment_decription");
 
                             // Create a Building object and add it to the list
-                            Building building = new Building(buildingId, buildingName, buildingAddress, buildingPhotoUrl);
+                            Building building = new Building(buildingId, buildingName, buildingAddress, buildingPhotoUrl, buildingDescription);
                             buildingList.add(building);
                         }
 
@@ -138,15 +177,21 @@ public class FeedScreen extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         // Handle building row click event
-                        GoToBuildingDetails(building.getBuildingId());
+                        GoToBuildingDetails(getAdapterPosition());
                     }
                 });
             }
         }
     }
 
-    private void GoToBuildingDetails(int buildingId) {
-        // Handle navigation to building details screen
+    private void GoToBuildingDetails(int position) {
+        Building building = buildingList.get(position);
+        Intent nav = new Intent(this, BuildingDetailsScreen.class);
+        nav.putExtra("buildingId", building.getBuildingId());
+        nav.putExtra("buildingName", building.getBuildingName());
+        nav.putExtra("buildingDescription", building.getBuildingDescription());
+        nav.putExtra("imageUrl", building.getBuildingPhotoUrl());
+        startActivity(nav);
     }
 
     private void GoToMapScreen() {

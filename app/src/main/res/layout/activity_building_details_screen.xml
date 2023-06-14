@@ -19,6 +19,7 @@
         android:id="@+id/BuildingName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#FF0000"
         android:text="Nom du bâtiment"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="30sp"
@@ -30,8 +31,10 @@
         android:id="@+id/BuildingDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BuildingName" />
 </androidx.constraintlayout.widget.ConstraintLayout>

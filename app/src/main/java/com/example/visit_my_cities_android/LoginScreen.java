@@ -27,7 +27,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.android.volley.toolbox.StringRequest;
-import com.example.visit_my_cities_android.ConnexionServer.Utilisateur.ConnexionServerGetUsers;
 
 public class LoginScreen extends AppCompatActivity
 {
