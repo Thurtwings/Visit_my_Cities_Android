@@ -55,10 +55,7 @@ public class LoginScreen extends AppCompatActivity
 
     private DBManager databaseManager;
 
-    private ImageButton mapButton4;
-    private ImageButton buildingButton4;
-    private ImageButton addButton4;
-    private ImageButton accountButton4;
+
 
     UserDataHandler dbHandler = new UserDataHandler(this);
 
@@ -134,6 +131,9 @@ public class LoginScreen extends AppCompatActivity
     private void GoToProfile()
     {
         Intent nav = new Intent(this, UserProfileScreen.class);
+        String userMail = dbHandler.getUserInfo("userMail", "userPseudo", textViewPseudo_LoginScreen.getText().toString());
+        nav.putExtra("username", textViewPseudo_LoginScreen.getText().toString());
+        nav.putExtra("usermail", userMail);
         startActivity(nav);
     }
 
@@ -168,8 +168,8 @@ public class LoginScreen extends AppCompatActivity
                             String success = jsonResponse.getString("success");
                             if (success.equals("true")) {
                                 Toast.makeText(getApplicationContext(), "Connexion réussie", Toast.LENGTH_LONG).show();
-                                Intent nav = new Intent(LoginScreen.this, UserProfileScreen.class);
-                                startActivity(nav);
+                                GoToProfile();
+
                             } else {
                                 Toast.makeText(getApplicationContext(), "Pseudo ou mot de passe incorrect", Toast.LENGTH_LONG).show();
                             }
