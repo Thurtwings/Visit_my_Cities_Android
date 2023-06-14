@@ -5,9 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -23,19 +28,55 @@ import com.google.android.gms.tasks.Task;
 
 public class MapScreen extends AppCompatActivity implements OnMapReadyCallback {
 
+    private ImageView banniere1;
+
     private final int FINE_PERMISSION_CODE = 1;
     private GoogleMap mainMap;
     Location currentLocation;
     FusedLocationProviderClient fusedLocationProviderClient;
+
+    private ImageButton mapButton1;
+    private ImageButton buildingButton1;
+    private ImageButton addButton1;
+    private ImageButton accountButton1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_display);
 
+        banniere1 = (ImageView) findViewById(R.id.banniere1);
+
+
+        mapButton1 = (ImageButton) findViewById(R.id.mapButton1);
+        buildingButton1 = (ImageButton) findViewById(R.id.buildingButton1);
+        addButton1 = (ImageButton) findViewById(R.id.addButton1);
+        accountButton1 = (ImageButton) findViewById(R.id.accountButton1);
+
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         GetLastLocation();
 
+
+        buildingButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                GoToFeedScreen();
+            }
+        });
+
+        addButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                GoToListsScreen();
+            }
+        });
+
+        accountButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                GoToLoginScreen();
+            }
+        });
     }
 
     private void GetLastLocation()
@@ -82,8 +123,37 @@ public class MapScreen extends AppCompatActivity implements OnMapReadyCallback {
             }
             else
             {
-                Toast.makeText(this, "Permission d'acceder a la localisation refusée, merci de l'autoriser", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Permission d'accéder a la localisation refusée, merci de l'autoriser pour pouvoir continuer", Toast.LENGTH_SHORT).show();
             }
         }
     }
+
+
+
+
+    private void GoToHomeScreen()
+    {
+        Intent nav = new Intent(this, MainActivity.class);
+        startActivity(nav);
+    }
+
+    private void GoToFeedScreen()
+    {
+        Intent nav = new Intent(this, FeedScreen.class);
+        startActivity(nav);
+    }
+
+    private void GoToListsScreen()
+    {
+        Intent nav = new Intent(this, ListsScreen.class);
+        startActivity(nav);
+    }
+
+    private void GoToLoginScreen()
+    {
+        Intent nav = new Intent(this, LoginScreen.class);
+        startActivity(nav);
+    }
+
+
 }
