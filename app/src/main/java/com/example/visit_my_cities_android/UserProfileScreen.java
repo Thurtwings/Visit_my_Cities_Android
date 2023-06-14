@@ -18,10 +18,7 @@ public class UserProfileScreen extends AppCompatActivity
     private ImageView banniere6;
 
     private TextView textViewPseudo_UPS;
-    private TextView textViewMail_UPS;
     private TextView textViewEmail_UPS;
-    private TextView textViewMotDePasse_UPS;
-    private TextView textViewPassWord_UPS;
 
     private ImageButton deconnectButton_UPS;
 
@@ -48,10 +45,11 @@ public class UserProfileScreen extends AppCompatActivity
 
         //UPS = UserProfileScreen 
         textViewPseudo_UPS = (TextView) findViewById(R.id.textViewPseudo3);
-        textViewMail_UPS = (TextView) findViewById(R.id.textViewMail3);
+
+        textViewPseudo_UPS.setText(getIntent().getStringExtra("username"));
+
         textViewEmail_UPS = (TextView) findViewById(R.id.textViewEmail);
-        textViewMotDePasse_UPS = (TextView) findViewById(R.id.textViewPassword3);
-        textViewPassWord_UPS = (TextView) findViewById(R.id.textViewPassWord);
+        textViewEmail_UPS.setText(getIntent().getStringExtra("usermail"));
 
 
         deconnectButton_UPS = (ImageButton) findViewById(R.id.deconnectButton);
