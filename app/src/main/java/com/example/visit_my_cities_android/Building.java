@@ -5,12 +5,14 @@ public class Building {
     private String buildingName;
     private String buildingAddress;
     private String buildingPhotoUrl;
+    private String buildingDescription;
 
-    public Building(int buildingId, String buildingName, String buildingAddress, String buildingPhotoUrl) {
+    public Building(int buildingId, String buildingName, String buildingAddress, String buildingPhotoUrl, String buildingDescription) {
         this.buildingId = buildingId;
         this.buildingName = buildingName;
         this.buildingAddress = buildingAddress;
         this.buildingPhotoUrl = buildingPhotoUrl;
+        this.buildingDescription = buildingDescription;
     }
 
     public int getBuildingId() {
@@ -28,5 +30,10 @@ public class Building {
     public String getBuildingPhotoUrl() {
         return buildingPhotoUrl;
     }
+
+    public String getBuildingDescription() {
+        return buildingDescription;
+    }
 }
+
 
