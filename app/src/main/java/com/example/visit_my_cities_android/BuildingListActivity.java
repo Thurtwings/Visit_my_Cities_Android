@@ -1,7 +1,4 @@
 package com.example.visit_my_cities_android;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -25,7 +27,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FeedScreen extends AppCompatActivity {
+public class BuildingListActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private BuildingAdapter buildingAdapter;
@@ -34,7 +36,7 @@ public class FeedScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_feed);
+        setContentView(R.layout.activity_building_list);
 
         recyclerView = findViewById(R.id.buildingRecyclerView);
         recyclerView.setHasFixedSize(true);
@@ -44,11 +46,14 @@ public class FeedScreen extends AppCompatActivity {
         buildingAdapter = new BuildingAdapter(buildingList);
         recyclerView.setAdapter(buildingAdapter);
 
-        fetchBuildings();
+        int cityId = getIntent().getIntExtra("cityId", -1);
+        if (cityId != -1) {
+            fetchBuildingsForCity(cityId);
+        }
     }
 
-    private void fetchBuildings() {
-        String url = "http://jdevalik.fr/api/VMC_PHP_SBG/vmc_get_buildings_sbg.php";
+    private void fetchBuildingsForCity(int cityId) {
+        String url = "http://jdevalik.fr/api/VMC_PHP_SBG/vmc_get_buildings_by_city.php?city_id=" + cityId;
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -57,16 +62,16 @@ public class FeedScreen extends AppCompatActivity {
                     boolean success = jsonResponse.getBoolean("success");
 
                     if (success) {
-                        JSONArray buildingsArray = jsonResponse.getJSONArray("batiments");
+                        JSONArray buildingsArray = jsonResponse.getJSONArray("buildings");
 
                         for (int i = 0; i < buildingsArray.length(); i++) {
                             JSONObject buildingObject = buildingsArray.getJSONObject(i);
 
                             // Extract the building details from the JSON object
-                            int buildingId = buildingObject.getInt("batiment_id");
-                            String buildingName = buildingObject.getString("batiment_nom");
-                            String buildingAddress = buildingObject.getString("batiment_adresse");
-                            String buildingPhotoUrl = buildingObject.getString("batiment_lien_photo");
+                            int buildingId = buildingObject.getInt("building_id");
+                            String buildingName = buildingObject.getString("building_name");
+                            String buildingAddress = buildingObject.getString("building_address");
+                            String buildingPhotoUrl = buildingObject.getString("building_photo_url");
 
                             // Create a Building object and add it to the list
                             Building building = new Building(buildingId, buildingName, buildingAddress, buildingPhotoUrl);
@@ -102,14 +107,15 @@ public class FeedScreen extends AppCompatActivity {
             this.buildingList = buildingList;
         }
 
+        @NonNull
         @Override
-        public BuildingViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        public BuildingViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.building_row_layout, parent, false);
             return new BuildingViewHolder(view);
         }
 
         @Override
-        public void onBindViewHolder(BuildingViewHolder holder, int position) {
+        public void onBindViewHolder(@NonNull BuildingViewHolder holder, int position) {
             Building building = buildingList.get(position);
             holder.bind(building);
         }
@@ -148,19 +154,5 @@ public class FeedScreen extends AppCompatActivity {
     private void GoToBuildingDetails(int buildingId) {
         // Handle navigation to building details screen
     }
-
-    private void GoToMapScreen() {
-        Intent nav = new Intent(this, MapScreen.class);
-        startActivity(nav);
-    }
-
-    private void GoToListsScreen() {
-        Intent nav = new Intent(this, ListsScreen.class);
-        startActivity(nav);
-    }
-
-    private void GoToLoginScreen() {
-        Intent nav = new Intent(this, LoginScreen.class);
-        startActivity(nav);
-    }
 }
+
