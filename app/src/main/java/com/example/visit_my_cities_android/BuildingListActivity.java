@@ -72,9 +72,11 @@ public class BuildingListActivity extends AppCompatActivity {
                             String buildingAddress = buildingObject.getString("building_address");
                             String buildingPhotoUrl = buildingObject.getString("building_photo_url");
                             String buildingDescription = buildingObject.getString("building_description");
+                            double buildingLatitude = buildingObject.getDouble("batiment_latitude");
+                            double buildingLongitude = buildingObject.getDouble("batiment_longitude");
 
                             // Create a Building object and add it to the list
-                            Building building = new Building(buildingId, buildingName, buildingAddress, buildingPhotoUrl, buildingDescription);
+                            Building building = new Building(buildingId, buildingName, buildingAddress, buildingPhotoUrl, buildingDescription, buildingLatitude, buildingLongitude);
                             buildingList.add(building);
                         }
 

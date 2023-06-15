@@ -7,12 +7,19 @@ public class Building {
     private String buildingPhotoUrl;
     private String buildingDescription;
 
-    public Building(int buildingId, String buildingName, String buildingAddress, String buildingPhotoUrl, String buildingDescription) {
+
+
+    private double buildingLatitude;
+    private double buildingLongitude;
+
+    public Building(int buildingId, String buildingName, String buildingAddress, String buildingPhotoUrl, String buildingDescription, double buildingLatitude, double buildingLongitude) {
         this.buildingId = buildingId;
         this.buildingName = buildingName;
         this.buildingAddress = buildingAddress;
         this.buildingPhotoUrl = buildingPhotoUrl;
         this.buildingDescription = buildingDescription;
+        this.buildingLatitude = buildingLatitude;
+        this.buildingLongitude = buildingLongitude;
     }
 
     public int getBuildingId() {
@@ -33,6 +40,14 @@ public class Building {
 
     public String getBuildingDescription() {
         return buildingDescription;
+    }
+
+    public double getLatitude() {
+        return buildingLatitude;
+    }
+
+    public double getLongitude() {
+        return buildingLongitude;
     }
 }
 

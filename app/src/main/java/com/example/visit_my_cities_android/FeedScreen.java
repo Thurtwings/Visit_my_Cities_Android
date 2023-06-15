@@ -106,9 +106,11 @@ public class FeedScreen extends AppCompatActivity {
                             String buildingAddress = buildingObject.getString("batiment_adresse");
                             String buildingPhotoUrl = buildingObject.getString("batiment_lien_photo");
                             String buildingDescription = buildingObject.getString("batiment_decription");
+                            double buildingLatitude = buildingObject.getDouble("batiment_latitude");
+                            double buildingLongitude = buildingObject.getDouble("batiment_longitude");
 
                             // Create a Building object and add it to the list
-                            Building building = new Building(buildingId, buildingName, buildingAddress, buildingPhotoUrl, buildingDescription);
+                            Building building = new Building(buildingId, buildingName, buildingAddress, buildingPhotoUrl, buildingDescription, buildingLatitude, buildingLongitude);
                             buildingList.add(building);
                         }
 
