@@ -109,10 +109,374 @@
                             android:layout_height="match_parent" />
 
                         <TextView
-                            android:id="@+id/travel_nom"
                             android:layout_width="62dp"
                             android:layout_height="match_parent"
-                            android:text="Nom"
+                            android:gravity="center"
+                            android:text="Liste-1"
+                            android:textColor="@color/black" />
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TableRow
+                                    android:layout_width="16dp"
+                                    android:layout_height="match_parent" />
+
+                                <ImageButton
+                                    android:id="@+id/valideMonumentButton"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:backgroundTint="@color/common_google_signin_btn_tint"
+                                    app:srcCompat="@drawable/btn_valide" />
+
+                            </TableRow>
+
+                        </TableRow>
+
+                    </TableRow>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageIllustration"
+                        android:layout_width="164dp"
+                        android:layout_height="108dp"
+                        app:srcCompat="@drawable/placeholder" />
+
+                    <TableRow
+                        android:layout_width="170dp"
+                        android:layout_height="match_parent">
+
+                        <TableRow
+                            android:layout_width="16dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:layout_width="62dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="Liste-2"
+                            android:textColor="@color/black" />
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TableRow
+                                    android:layout_width="16dp"
+                                    android:layout_height="match_parent" />
+
+                                <ImageButton
+                                    android:id="@+id/valideMonumentButton"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:backgroundTint="@color/common_google_signin_btn_tint"
+                                    app:srcCompat="@drawable/btn_valide" />
+
+                            </TableRow>
+
+                        </TableRow>
+
+                    </TableRow>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageIllustration"
+                        android:layout_width="164dp"
+                        android:layout_height="108dp"
+                        app:srcCompat="@drawable/placeholder" />
+
+                    <TableRow
+                        android:layout_width="170dp"
+                        android:layout_height="match_parent">
+
+                        <TableRow
+                            android:layout_width="16dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:layout_width="62dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="Liste-3"
+                            android:textColor="@color/black" />
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TableRow
+                                    android:layout_width="16dp"
+                                    android:layout_height="match_parent" />
+
+                                <ImageButton
+                                    android:id="@+id/valideMonumentButton"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:backgroundTint="@color/common_google_signin_btn_tint"
+                                    app:srcCompat="@drawable/btn_valide" />
+
+                            </TableRow>
+
+                        </TableRow>
+
+                    </TableRow>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageIllustration"
+                        android:layout_width="164dp"
+                        android:layout_height="108dp"
+                        app:srcCompat="@drawable/placeholder" />
+
+                    <TableRow
+                        android:layout_width="170dp"
+                        android:layout_height="match_parent">
+
+                        <TableRow
+                            android:layout_width="16dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:layout_width="62dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="Liste-4"
+                            android:textColor="@color/black" />
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TableRow
+                                    android:layout_width="16dp"
+                                    android:layout_height="match_parent" />
+
+                                <ImageButton
+                                    android:id="@+id/valideMonumentButton"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:backgroundTint="@color/common_google_signin_btn_tint"
+                                    app:srcCompat="@drawable/btn_valide" />
+
+                            </TableRow>
+
+                        </TableRow>
+
+                    </TableRow>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageIllustration"
+                        android:layout_width="164dp"
+                        android:layout_height="108dp"
+                        app:srcCompat="@drawable/placeholder" />
+
+                    <TableRow
+                        android:layout_width="170dp"
+                        android:layout_height="match_parent">
+
+                        <TableRow
+                            android:layout_width="16dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:layout_width="62dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="Liste-5"
+                            android:textColor="@color/black" />
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TableRow
+                                    android:layout_width="16dp"
+                                    android:layout_height="match_parent" />
+
+                                <ImageButton
+                                    android:id="@+id/valideMonumentButton"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:backgroundTint="@color/common_google_signin_btn_tint"
+                                    app:srcCompat="@drawable/btn_valide" />
+
+                            </TableRow>
+
+                        </TableRow>
+
+                    </TableRow>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageIllustration"
+                        android:layout_width="164dp"
+                        android:layout_height="108dp"
+                        app:srcCompat="@drawable/placeholder" />
+
+                    <TableRow
+                        android:layout_width="170dp"
+                        android:layout_height="match_parent">
+
+                        <TableRow
+                            android:layout_width="16dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:layout_width="62dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="Liste-6"
+                            android:textColor="@color/black" />
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TableRow
+                                    android:layout_width="16dp"
+                                    android:layout_height="match_parent" />
+
+                                <ImageButton
+                                    android:id="@+id/valideMonumentButton"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:backgroundTint="@color/common_google_signin_btn_tint"
+                                    app:srcCompat="@drawable/btn_valide" />
+
+                            </TableRow>
+
+                        </TableRow>
+
+                    </TableRow>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageIllustration"
+                        android:layout_width="164dp"
+                        android:layout_height="108dp"
+                        app:srcCompat="@drawable/placeholder" />
+
+                    <TableRow
+                        android:layout_width="170dp"
+                        android:layout_height="match_parent">
+
+                        <TableRow
+                            android:layout_width="16dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:layout_width="62dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="Liste-8"
+                            android:textColor="@color/black" />
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TableRow
+                                    android:layout_width="16dp"
+                                    android:layout_height="match_parent" />
+
+                                <ImageButton
+                                    android:id="@+id/valideMonumentButton"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:backgroundTint="@color/common_google_signin_btn_tint"
+                                    app:srcCompat="@drawable/btn_valide" />
+
+                            </TableRow>
+
+                        </TableRow>
+
+                    </TableRow>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageIllustration"
+                        android:layout_width="164dp"
+                        android:layout_height="108dp"
+                        app:srcCompat="@drawable/placeholder" />
+
+                    <TableRow
+                        android:layout_width="170dp"
+                        android:layout_height="match_parent">
+
+                        <TableRow
+                            android:layout_width="16dp"
+                            android:layout_height="match_parent" />
+
+                        <TextView
+                            android:layout_width="62dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="Liste-9"
                             android:textColor="@color/black" />
 
                         <TableRow
